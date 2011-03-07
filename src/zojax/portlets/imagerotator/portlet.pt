@@ -1,0 +1,43 @@
+<div class="z-portlet portlet-imagerotator"
+     i18n:domain="zojax.portlets.imagerotator"
+     tal:define="cssClass string:z-portlet portlet-htmlsource"
+     tal:attributes="class python:context.cssClass and cssClass + ' ' + context.cssClass
+                                  or cssClass"
+     tal:condition="context/decoration">
+  
+  <h2 class="z-portlet-header"
+      tal:condition="context/label" tal:content="context/label">Portlet Header</h2>
+
+  <div class="z-portlet-body">
+    <div class="z-portlet-item">
+      <div id="bannersrotator">
+        <div class="banner">
+          <div class="textreel">
+            <span><div> text 1 </div></span>
+            <span><div> text 2 </div></span>
+            <span><div> text 3 </div></span>
+            <span><div> text 4 </div></span>
+            <span><div> text 5 </div></span>
+            <span><div> text 6 </div></span>
+          </div>
+          <div class="imagereel">
+            <a href="#"><img src="slide1.jpg" alt="" /></a>
+            <a href="#"><img src="slide2.jpg" alt="" /></a>
+            <a href="#"><img src="slide3.jpg" alt="" /></a>
+            <a href="#"><img src="slide4.jpg" alt="" /></a>
+            <a href="#"><img src="slide5.jpg" alt="" /></a>
+            <a href="#"><img src="slide6.jpg" alt="" /></a>
+          </div>
+        </div>
+        <div class="thumbs">
+          <a href="#" rel="1"><img src="thumb1.jpg" alt="" /></a>
+          <a href="#" rel="2"><img src="thumb2.jpg" alt="" /></a>
+          <a href="#" rel="3"><img src="thumb3.jpg" alt="" /></a>
+          <a href="#" rel="4"><img src="thumb4.jpg" alt="" /></a>
+          <a href="#" rel="5"><img src="thumb5.jpg" alt="" /></a>
+          <a href="#" rel="6"><img src="thumb6.jpg" alt="" /></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

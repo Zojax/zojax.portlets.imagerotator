@@ -5,21 +5,21 @@
    i18n_domain="zojax.portlets">
 
   <zojax:portlet
-     name="portlet.livesearch"
-     title="Live Search"
-     class=".portlet.LiveSearchPortlet"
+     name="portlet.imagerotator"
+     title="Image rotator"
+     class=".portlet.ImageRotatorPortlet"
      template="portlet.pt" />
 
   <zojax:resourceinclude
-     name="zojax.portlets.livesearch"
+     name="zojax.portlets.imagerotator"
      type="javascript"
-     library="zojax.portlets.livesearch"
-     require="extjs"
-     file="livesearch.js" />
+     library="zojax.portlets.imagerotator"
+     require="jquery"
+     file="imagerotator.js" />
 
   <browser:page
      name="search.html"
-     for=".interfaces.ILiveSearchPortlet"
+     for=".interfaces.IImageRotatorPortlet"
      class=".search.Search"
      permission="zope.Public" />
 

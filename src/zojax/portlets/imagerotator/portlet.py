@@ -21,11 +21,11 @@ from zope.app.component.hooks import getSite
 from zojax.catalog.interfaces import ICatalog
 from zojax.resourcepackage.library import include
 
-from interfaces import ILiveSearchPortlet
+from interfaces import IImageRotatorPortlet
 
 
-class LiveSearchPortlet(object):
-    interface.implements(ILiveSearchPortlet)
+class ImageRotatorPortlet(object):
+    interface.implements(IImageRotatorPortlet)
 
     def update(self):
         self.catalog = queryUtility(ICatalog)
@@ -39,7 +39,7 @@ class LiveSearchPortlet(object):
         self.portal = getSite()
 
         if self.fti is not None:
-            include('zojax.portlets.livesearch')
+            include('zojax.portlets.imagerotator')
 
     def isAvailable(self):
         return self.fti is not None

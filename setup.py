@@ -11,7 +11,7 @@
 # FOR A PARTICULAR PURPOSE.
 #
 ##############################################################################
-"""Setup for zojax.portlets.livesearch package
+"""Setup for zojax.portlets.imagerotator package
 
 $Id$
 """
@@ -24,11 +24,11 @@ def read(*rnames):
 version='1.0.0dev'
 
 
-setup(name = 'zojax.portlets.livesearch',
+setup(name = 'zojax.portlets.imagerotator',
       version = version,
-      author = 'Nikolay Kim',
-      author_email = 'fafhrd91@gmail.com',
-      description = "Google Ads portlet",
+      author = 'Anatoly Bubenkov',
+      author_email = 'bubenkoff@gmail.com',
+      description = "Image js rotator portlet",
       long_description = (
         'Detailed Documentation\n' +
         '======================\n'
@@ -55,12 +55,9 @@ setup(name = 'zojax.portlets.livesearch',
                           'zope.interface',
                           'zope.schema',
                           'zope.i18nmessageid',
-                          'zojax.catalog',
                           'zojax.portlet',
-                          'zojax.ownership',
-                          'zojax.formatter',
-                          'zojax.ui.searching',
-                          'zojax.js.extjs',
+                          'zojax.filefield',
+                          'zojax.js.jquery',
                           'zojax.resource',
                           'zojax.resourcepackage',
                           ],
