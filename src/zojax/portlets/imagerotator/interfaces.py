@@ -30,7 +30,11 @@ class IImageRotatorImage(interface.Interface):
     
     text = RichText(title=_(u'Text'), required=False)
     
+    detailText = RichText(title=_(u'Detail text'), required=False)
+    
     image = ImageField(title=_(u'Picture'), required=False)
+    
+    detailImage = ImageField(title=_(u'Detail picture'), required=False)
     
     thumbnail = ImageField(title=_(u'Thumbnail'), required=False)
     
