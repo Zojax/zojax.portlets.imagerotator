@@ -41,7 +41,7 @@ class ImageRotatorPortlet(object):
     
     @setproperty
     def images(self, value):
-        old = self.__data__['images']
+        old = self.images
         if value is not None:
             if len(value) > len(old):
                 old.extend(value[len(old):])
