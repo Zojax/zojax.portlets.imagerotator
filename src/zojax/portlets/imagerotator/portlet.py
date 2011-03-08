@@ -37,7 +37,7 @@ class ImageRotatorPortlet(object):
     
     @getproperty
     def images(self):
-        return self.__data__['images']
+        return self.__data__.get('images', [])
     
     @setproperty
     def images(self, value):
