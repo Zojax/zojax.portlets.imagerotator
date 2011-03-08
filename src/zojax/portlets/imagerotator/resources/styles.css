@@ -1,0 +1,86 @@
+/* zrt-cssregistry: */
+
+@media all { 
+
+  
+/* image rotator */
+
+.imagerotator-container {
+  float: left;
+  position: relative;
+  overflow: hidden;
+}
+.imagerotator-container .banner, 
+.imagerotator-container .textreel span {        
+  width: 984px;
+  height: 302px;
+  overflow: hidden;
+  position: relative;
+}
+.imagerotator-container .imagereel, 
+.imagerotator-container .textreel {
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+.imagerotator-container .imagereel {
+  z-index: 78;
+}
+.imagerotator-container .textreel {
+  z-index: 79;
+}
+.imagerotator-container .imagereel img {
+  float: left;
+}
+.imagerotator-container .textreel span {
+  display: block;
+  height: 177px;
+  width: 230px;
+  float: left;
+  padding: 40px 40px 84px 714px;
+}
+.imagerotator-container .textreel span div {
+  font-size: 22px;
+  color: #fff;
+  height: 97px;
+  width: 190px;
+  padding: 40px 20px 40px 20px;
+  background: #597891;
+   filter: alpha(Opacity=70);
+   -moz-opacity: 0.7; 
+   -khtml-opacity: 0.7;
+    opacity: 0.7;
+}
+.imagerotator-container .thumbs {
+  display: none;
+  height: 47px;
+  width: 980px;
+  padding-top: 6px;
+  background: transparent url(images/bg-white-1x1.png) repeat left top;
+  bottom: 0;
+  position: absolute;
+  z-index: 80;
+}
+.imagerotator-container .thumbs a {
+  display: block;
+  float: left;
+  margin: 0 5px;
+  height: 41px;
+  width: 50px;
+}
+.imagerotator-container .thumbs a img {
+  background: transparent;
+  filter: alpha(Opacity=50);
+  -moz-opacity: 0.5; 
+  -khtml-opacity: 0.5; 
+   opacity: 0.5; 
+}
+.imagerotator-container .thumbs a.active img, 
+.imagerotator-container .thumbs a:hover img {
+  background: transparent;
+  filter: alpha(Opacity=100);
+  -moz-opacity: 1.0; 
+  -khtml-opacity: 1.0; 
+   opacity: 1.0; 
+}
+}

@@ -21,7 +21,7 @@ from zope.i18nmessageid import MessageFactory
 from zojax.filefield.field import ImageField
 from zojax.richtext.field import RichText
 
-_ = MessageFactory('zojax.portlets')
+_ = MessageFactory('"zojax.portlets.imagerotator"')
 
 
 class IImageRotatorImage(interface.Interface):
@@ -31,6 +31,10 @@ class IImageRotatorImage(interface.Interface):
     text = RichText(title=_(u'Text'), required=False)
     
     image = ImageField(title=_(u'Picture'), required=False)
+    
+    thumbnail = ImageField(title=_(u'Thumbnail'), required=False)
+    
+    image.mimeTypes = thumbnail.mimeTypes = ('image/jpeg', 'image/gif', 'image/png', 'application/octet-stream')
 
 
 class IImageRotatorPortlet(interface.Interface):
@@ -51,8 +55,8 @@ class IImageRotatorPortlet(interface.Interface):
         title = _(u'CSS class'),
         required = False)
     
-    images = schema.Tuple(title=_(u"Images"),
+    images = schema.List(title=_(u"Images"),
                          value_type=schema.Object(title=_(u'image'),
-                                                 schema=ILeadForm),
-                         default=(),
+                                                  schema=IImageRotatorImage),
+                         default=[],
                          required=False)

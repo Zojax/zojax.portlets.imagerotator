@@ -11,6 +11,7 @@
 # FOR A PARTICULAR PURPOSE.
 #
 ##############################################################################
+from rwproperty import setproperty, getproperty
 """
 
 $Id$
@@ -20,26 +21,42 @@ from zope.component import queryUtility
 from zope.app.component.hooks import getSite
 from zojax.catalog.interfaces import ICatalog
 from zojax.resourcepackage.library import include
+from zojax.portlet.browser.portlet import publicAbsoluteURL
 
 from interfaces import IImageRotatorPortlet
 
 
 class ImageRotatorPortlet(object):
-    interface.implements(IImageRotatorPortlet)
 
     def update(self):
-        self.catalog = queryUtility(ICatalog)
-
-        if self.catalog is not None:
-            self.fti = self.catalog.getFTIndex()
-        else:
-            self.fti = None
-
-        self.value = self.request.get(self.fti)
-        self.portal = getSite()
-
-        if self.fti is not None:
-            include('zojax.portlets.imagerotator')
-
+        include('zojax.portlets.imagerotator')
+        self.url = publicAbsoluteURL(self, self.request)
+        
     def isAvailable(self):
-        return self.fti is not None
+        return bool(self.images)
+    
+    @getproperty
+    def images(self):
+        return self.__data__['images']
+    
+    @setproperty
+    def images(self, value):
+        old = self.__data__['images']
+        if value is not None:
+            if len(value) > len(old):
+                old.extend(value[len(old):])
+            else:
+                old = old[:len(value)]
+        else:
+            self.__data__['images'] = []
+            return
+        for k, v in enumerate(value):
+            ov = old[k]
+            if v.image.data:
+                ov.image = v.image
+            if v.thumbnail.data:
+               ov.thumbnail = v.thumbnail
+            ov.title = v.title
+            ov.text = v.text
+        self.__data__['images'] = old
+                

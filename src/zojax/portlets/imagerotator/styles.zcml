@@ -1,0 +1,17 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   xmlns:zojax="http://namespaces.zope.org/zojax"
+   i18n_domain="zojax.portlets.imagerotator">
+
+  <!-- styles -->
+  <zojax:resourceinclude
+     name="zojax-portlets-imagerotator.css"
+     library="zojax.portlets.imagerotator" type="stylesheet"
+     path="portlet-imagerotator/styles.css" filetype="zrt" />
+
+  <zojax:resourcedirectory
+     name="portlet-imagerotator"
+     directory="resources"
+     mapping=".css:zrt" />
+
+</configure>

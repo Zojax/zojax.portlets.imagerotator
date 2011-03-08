@@ -2,13 +2,29 @@
    xmlns="http://namespaces.zope.org/zope"
    xmlns:zojax="http://namespaces.zope.org/zojax"
    xmlns:browser="http://namespaces.zope.org/browser"
-   i18n_domain="zojax.portlets">
+   i18n_domain="zojax.portlets.imagerotator">
 
   <zojax:portlet
      name="portlet.imagerotator"
      title="Image rotator"
      class=".portlet.ImageRotatorPortlet"
-     template="portlet.pt" />
+     schema=".interfaces.IImageRotatorPortlet" />
+     
+  <!-- portlets access -->
+  <adapter
+     name="images"
+     for="* zope.publisher.interfaces.http.IHTTPRequest"
+     provides="zope.publisher.interfaces.IPublishTraverse"
+     factory=".images.Images" />
+
+  <class class=".images.Images">
+    <allow interface="zope.publisher.interfaces.IPublishTraverse" />
+  </class>
+     
+  <zojax:pagelet
+     type="portlet.view"
+     template="portlet.pt"
+     for=".interfaces.IImageRotatorPortlet" />
 
   <zojax:resourceinclude
      name="zojax.portlets.imagerotator"
@@ -17,10 +33,10 @@
      require="jquery"
      file="imagerotator.js" />
 
-  <browser:page
-     name="search.html"
-     for=".interfaces.IImageRotatorPortlet"
-     class=".search.Search"
-     permission="zope.Public" />
-
+  <class class=".forms.ImageRotatorImage">
+    <allow interface=".interfaces.IImageRotatorImage" />
+  </class>
+  
+  <include file="styles.zcml" />
+  
 </configure>
