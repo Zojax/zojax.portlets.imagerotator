@@ -43,3 +43,16 @@ class Images(object):
         except (TypeError, ValueError, IndexError), e:
             raise
         raise NotFound(self.context, self.__name__, request)
+    
+
+class Buttons(Images):
+
+    __name__ = 'buttons'
+
+    def publishTraverse(self, request, name):
+        context = self.context
+        try:
+            return LocationProxy(context.buttons[int(name)-1], self.context, name)
+        except (TypeError, ValueError, IndexError), e:
+            raise
+        raise NotFound(self.context, self.__name__, request)

@@ -10,14 +10,24 @@
      class=".portlet.ImageRotatorPortlet"
      schema=".interfaces.IImageRotatorPortlet" />
      
-  <!-- portlets access -->
+  <!-- images access -->
   <adapter
      name="images"
-     for="* zope.publisher.interfaces.http.IHTTPRequest"
+     for=".interfaces.IImageRotatorPortlet zope.publisher.interfaces.http.IHTTPRequest"
      provides="zope.publisher.interfaces.IPublishTraverse"
      factory=".images.Images" />
+  
+  <adapter
+     name="buttons"
+     for=".interfaces.IImageRotatorPortlet zope.publisher.interfaces.http.IHTTPRequest"
+     provides="zope.publisher.interfaces.IPublishTraverse"
+     factory=".images.Buttons" />
 
   <class class=".images.Images">
+    <allow interface="zope.publisher.interfaces.IPublishTraverse" />
+  </class>
+  
+  <class class=".images.Buttons">
     <allow interface="zope.publisher.interfaces.IPublishTraverse" />
   </class>
      
@@ -31,10 +41,14 @@
      type="javascript"
      library="zojax.portlets.imagerotator"
      require="jquery"
-     file="imagerotator.js" />
+     path="portlet-imagerotator/imagerotator.js" />
 
   <class class=".forms.ImageRotatorImage">
     <allow interface=".interfaces.IImageRotatorImage" />
+  </class>
+  
+  <class class=".forms.ImageRotatorButton">
+    <allow interface=".interfaces.IImageRotatorButton" />
   </class>
   
   <include file="styles.zcml" />

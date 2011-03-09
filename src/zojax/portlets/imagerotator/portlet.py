@@ -59,4 +59,28 @@ class ImageRotatorPortlet(object):
             ov.title = v.title
             ov.text = v.text
         self.__data__['images'] = old
-                
+        
+    @getproperty
+    def buttons(self):
+        return self.__data__.get('buttons', [])
+    
+    @setproperty
+    def buttons(self, value):
+        old = self.buttons
+        if value is not None:
+            if len(value) > len(old):
+                old.extend(value[len(old):])
+            else:
+                old = old[:len(value)]
+        else:
+            self.__data__['buttons'] = []
+            return
+        for k, v in enumerate(value):
+            ov = old[k]
+            if v.image.data:
+                ov.image = v.image
+            ov.title = v.title
+            ov.text = v.text
+            ov.url = v.url
+        self.__data__['buttons'] = old
+                        

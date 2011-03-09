@@ -5,6 +5,8 @@ $('.imagerotator-container').each(function() {
 //Set Default State of each banners piece
 var $this = $(this);
 var play;
+if ($this.find('.buttons').length)
+    $('.thumbs').empty();
 $this.find(".thumbs").show();
 $this.find(".thumbs a:first").addClass("active");
 

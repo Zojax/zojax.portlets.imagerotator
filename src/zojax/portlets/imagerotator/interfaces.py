@@ -24,22 +24,28 @@ from zojax.richtext.field import RichText
 _ = MessageFactory('"zojax.portlets.imagerotator"')
 
 
-class IImageRotatorImage(interface.Interface):
+class IImageRotatorItem(interface.Interface):
 
     title = schema.TextLine(title=_(u'Title'), required=False)
     
-    text = RichText(title=_(u'Text'), required=False)
-    
-    detailText = RichText(title=_(u'Detail text'), required=False)
-    
     image = ImageField(title=_(u'Picture'), required=False)
     
-    detailImage = ImageField(title=_(u'Detail picture'), required=False)
+    text = RichText(title=_(u'Text'), required=False)
+
+    image.mimeTypes = ('image/jpeg', 'image/gif', 'image/png', 'application/octet-stream')
     
+    
+class IImageRotatorImage(IImageRotatorItem):
+
     thumbnail = ImageField(title=_(u'Thumbnail'), required=False)
     
-    image.mimeTypes = thumbnail.mimeTypes = ('image/jpeg', 'image/gif', 'image/png', 'application/octet-stream')
+    thumbnail.mimeTypes = IImageRotatorItem['image'].mimeTypes
 
+
+class IImageRotatorButton(IImageRotatorItem):
+    
+    url = schema.TextLine(title=_(u'URL'), required=False)
+    
 
 class IImageRotatorPortlet(interface.Interface):
     """ portlet interface """
@@ -62,5 +68,11 @@ class IImageRotatorPortlet(interface.Interface):
     images = schema.List(title=_(u"Images"),
                          value_type=schema.Object(title=_(u'image'),
                                                   schema=IImageRotatorImage),
+                         default=[],
+                         required=False)
+    
+    buttons = schema.List(title=_(u"Buttons"),
+                         value_type=schema.Object(title=_(u'button'),
+                                                  schema=IImageRotatorButton),
                          default=[],
                          required=False)
