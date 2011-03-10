@@ -24,12 +24,10 @@
   left: 0;
   position: absolute;
 }
-.imagerotator-container .banners .item-image {
-  z-index: 78;
+.imagerotator-container .banner-item {
+    z-index: 100;
 }
-.imagerotator-container .banners .item-text {
-  z-index: 79;
-}
+
 .imagerotator-container .banners .item-text {
   display: block;
   height: 177px;

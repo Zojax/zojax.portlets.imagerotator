@@ -21,12 +21,9 @@ var rotate = function($active){
     $active.addClass('active'); //Add active class (the $active is declared in the rotateSwitch function)
     
     //Slider Animation
-    $(".banners li").hide();
-    $currentText.hide();   
-    $current.fadeIn(400); 
-    $(".banners li").eq(triggerID - 1).fadeOut(400); 
+    $(".banners li").animate({opacity:0}, {queue: false, duration: 2000});
+    $current.animate({opacity:100}, {queue: false, duration: 2000});
     $currentText.delay(600).fadeIn(400);
-
 };
 
 //Rotation + Timing Event
