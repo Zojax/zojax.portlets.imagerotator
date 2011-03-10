@@ -22,7 +22,7 @@ var rotate = function($active){
     
     //Slider Animation
     $(".banners li").animate({opacity:0}, {queue: false, duration: 2000});
-    $current.animate({opacity:100}, {queue: false, duration: 2000});
+    $current.animate({opacity:1}, {queue: false, duration: 2000});
     $currentText.delay(600).fadeIn(400);
 };
 
