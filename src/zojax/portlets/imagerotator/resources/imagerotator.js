@@ -68,7 +68,7 @@ $this.find(".imagereel a").hover(
           $(this).find(".buttons-block").slideToggle("slow");
         }, function() {
           $(this).find(".buttons-block").stop();
-          $this.find(".buttons-block").hide();
+          $this.find(".buttons-block").toggle();
           $this.find(".buttons-item").show();
       });
 
