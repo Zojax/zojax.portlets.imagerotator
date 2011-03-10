@@ -17,10 +17,19 @@
   overflow: hidden;
   position: relative;
 }
-.imagerotator-container .banners .item-text {
+.imagerotator-container .banners .item-text,
+.imagerotator-container .banners .item-image {
   top: 0;
   left: 0;
   position: absolute;
+}
+.imagerotator-container .banners .item-image {
+  z-index: 78;
+}
+.imagerotator-container .banners .item-text {
+  z-index: 79;
+}
+.imagerotator-container .banners .item-text {
   display: block;
   height: 177px;
   width: 230px;

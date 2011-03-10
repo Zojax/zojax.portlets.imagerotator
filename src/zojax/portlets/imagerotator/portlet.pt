@@ -29,8 +29,7 @@
                class="item-image" />
         </li>
       </ul>
-      <div tal:condition="not:context/buttons"
-           class="thumbs">
+      <div class="thumbs">
         <a tal:repeat="image context/images" href="#" tal:attributes="rel repeat/image/number"><img tal:attributes="src string:${context/url}/images/${repeat/image/number}/++attribute++thumbnail; alt image/title" /></a>
       </div>
       <div tal:condition="context/buttons"
