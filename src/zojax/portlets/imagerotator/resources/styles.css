@@ -53,14 +53,14 @@
   height: 97px;
   width: 190px;
   padding: 30px 20px 45px 20px;
-  background: transparent url(images/bg-gray-1x1.png) repeat left top;
+  background: transparent url(portlet-imagerotator/images/bg-gray-1x1.png) repeat left top;
 }
 .imagerotator-container .thumbs {
   display: none;
   height: 47px;
   width: 980px;
   padding-top: 6px;
-  background: transparent url(images/bg-white-1x1.png) repeat left top;
+  background: transparent url(portlet-imagerotator/images/bg-white-1x1.png) repeat left top;
   bottom: 0;
   position: absolute;
   z-index: 80;
@@ -99,7 +99,7 @@
 }*/
 .imagerotator-container .buttons ul li .buttons-item,
 .imagerotator-container .buttons li .buttons-block { 
-  background: url(images/bg-white-1x1.png) repeat left top transparent;
+  background: url(portlet-imagerotator/images/bg-white-1x1.png) repeat left top transparent;
 }
 
 .imagerotator-container .buttons ul li { 
