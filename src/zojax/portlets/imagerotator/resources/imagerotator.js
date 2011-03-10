@@ -25,7 +25,7 @@ var rotate = function($active){
     $this.find('.item-text').animate({opacity:0}, {queue: false, duration: 2000});
     $current.siblings().find('.item-image').animate({opacity:0}, {queue: false, duration: 2000});
     $current.find('.item-image').animate({opacity:1}, {queue: false, duration: 2000});
-    $current.find('.item-text').delay(2000).animate({opacity:1});
+    $current.find('.item-text').delay(800).animate({opacity:1});
 
 };
 
@@ -39,7 +39,7 @@ var rotateSwitch = function($active){
         $active = $this.find('.thumbs a:first'); //go back to first
     }
     rotate($active); //Trigger the paging and slider function
-    }, 5000); //Timer speed in milliseconds
+    }, 6500); //Timer speed in milliseconds
 };
 
 rotateSwitch(); //Run function on launch
