@@ -10,8 +10,6 @@
   position: relative;
   overflow: hidden;
 }
-.imagerotator-container .banner, 
-.imagerotator-container .textreel span,
 .imagerotator-container .banners,
 .imagerotator-container .banners .banner-item {        
   width: 984px;
@@ -19,33 +17,19 @@
   overflow: hidden;
   position: relative;
 }
-.imagerotator-container .imagereel, 
-.imagerotator-container .textreel,
 .imagerotator-container .banners .item-text {
   top: 0;
   left: 0;
   position: absolute;
-}
-.imagerotator-container .imagereel {
-  z-index: 78;
-}
-.imagerotator-container .textreel {
-  z-index: 79;
-}
-.imagerotator-container .imagereel img {
-  float: left;
-}
-.imagerotator-container .textreel span,
-.imagerotator-container .banners .item-text {
   display: block;
   height: 177px;
   width: 230px;
   float: left;
   padding: 40px 40px 84px 714px;
 }
-.imagerotator-container .textreel span div,
 .imagerotator-container .banners .item-text div {
   font-size: 22px;
+  line-height: 1em;
   color: #fff;
   height: 97px;
   width: 190px;
@@ -87,5 +71,66 @@
   -moz-opacity: 1.0; 
   -khtml-opacity: 1.0; 
    opacity: 1.0; 
+}
+
+.imagerotator-container .buttons ul li:hover {
+  background: transparent;
+}
+.imagerotator-container .buttons ul li:hover .buttons-block {
+  display: block;
+}
+.imagerotator-container .buttons ul li:hover .buttons-item {
+  display: none;
+}
+.imagerotator-container .buttons ul li,
+.imagerotator-container .buttons li .buttons-block { 
+  background: url(images/bg-white-1x1.png) repeat left top transparent;
+}
+
+.imagerotator-container .buttons ul li { 
+  display: block; 
+  float: left;
+  height: 47px; 
+  width: 240px; 
+  margin-right: 5px; 
+  text-align: center;
+  padding-top: 15px;
+}
+.imagerotator-container .buttons {
+  bottom: 0;
+  height: 47px;
+  position: absolute;
+  width: 980px;
+  z-index: 80;
+}
+.imagerotator-container .buttons-block span,
+.imagerotator-container .buttons ul li .buttons-item {
+  font-size: 20px;
+  color: #454545;
+  text-transform: uppercase;
+}
+.imagerotator-container .buttons li .buttons-block {
+  position: absolute;
+  bottom: 0;
+  display: none;
+  text-align: left;
+  padding: 5px 5px 15px 5px;
+  width: 230px;
+  font-size: 12px;
+}
+.imagerotator-container .buttons-block span {
+  border-bottom: 1px solid #454545;
+  display: block;
+  width: 170px;
+  padding: 15px;
+  margin: 0 15px;
+}
+.imagerotator-container .buttons-block p {
+  padding: 15px 30px;
+  margin: 0;
+}
+.imagerotator-container .buttons-block a {
+  padding: 15px 30px;
+  color: #454545;
 }
 }
