@@ -6,8 +6,11 @@ $('.imagerotator-container').each(function() {
 //Set Default State of each banners piece
 var $this = $(this);
 var play;
+var first = $this.find("..banner-item.first");
+first.siblings().find('.item-text').css({opacity:0});
+first.siblings().find('.item-image').css({opacity:0});
+first.removeClass('first');
 $this.find(".thumbs").show();
-$this.find(".thumbs a:first").addClass("active");
 if ($this.find('.buttons').length)
     $('.thumbs').css('display', 'none');
 
@@ -15,7 +18,6 @@ if ($this.find('.buttons').length)
 var rotate = function($active){
     var triggerID = parseInt($active.attr("rel")) - 1; //Get number of times to slide
     var $current = $(".banners li").eq(triggerID);
-    
     $this.find(".thumbs a").removeClass('active'); //Remove all active class
     $active.addClass('active'); //Add active class (the $active is declared in the rotateSwitch function)
     
@@ -32,8 +34,7 @@ var rotateSwitch = function($active){
     play = setInterval(function(){ //Set timer - this will repeat itself every 3 seconds
     if (!$active)
         $active = $this.find('.thumbs a.active');
-    else
-        $active = $active.next();
+    $active = $active.next();
     if ( $active.length === 0) { //If paging reaches the end...
         $active = $this.find('.thumbs a:first'); //go back to first
     }

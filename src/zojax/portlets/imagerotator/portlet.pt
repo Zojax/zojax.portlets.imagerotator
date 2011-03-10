@@ -23,14 +23,15 @@
   <metal:block define-macro="rotator">
     <div class="imagerotator-container">
       <ul class="banners">
-        <li class="banner-item" tal:repeat="image context/images">
+        <li tal:repeat="image context/images" class="banner-item"
+            tal:attributes="class python:repeat['image'].start and 'banner-item first' or 'banner-item'">
           <span class="item-text"><div tal:content="structure image/text/cooked">text1</div></span>
           <img tal:attributes="src string:${context/url}/images/${repeat/image/number}/++attribute++image; alt image/title"
                class="item-image" />
         </li>
       </ul>
       <div class="thumbs">
-        <a tal:repeat="image context/images" href="#" tal:attributes="rel repeat/image/number"><img tal:attributes="src string:${context/url}/images/${repeat/image/number}/++attribute++thumbnail; alt image/title" /></a>
+        <a tal:repeat="image context/images" href="#" tal:attributes="rel repeat/image/number; class python:repeat['image'].start and 'active' or nothing"><img tal:attributes="src string:${context/url}/images/${repeat/image/number}/++attribute++thumbnail; alt image/title" /></a>
       </div>
       <div tal:condition="context/buttons"
            class="buttons">

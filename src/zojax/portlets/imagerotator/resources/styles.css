@@ -25,10 +25,19 @@
   position: absolute;
 }
 .imagerotator-container .banner-item {
+  z-index: 68;
+}
+
+.imagerotator-container .banner-item.first {
   z-index: 78;
 }
-.imagerotator-container .item-text {
+
+.imagerotator-container .banner-item.first .item-text {
   z-index: 79;
+}
+
+.imagerotator-container .item-text {
+  z-index: 69;
 }
 .imagerotator-container .banners .item-text {
   display: block;
