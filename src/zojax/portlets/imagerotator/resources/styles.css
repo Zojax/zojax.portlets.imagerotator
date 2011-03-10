@@ -101,7 +101,7 @@
 .imagerotator-container .buttons ul li:hover .buttons-item {
   display: none;
 }*/
-.imagerotator-container .buttons ul li,
+.imagerotator-container .buttons ul li .buttons-item,
 .imagerotator-container .buttons li .buttons-block { 
   background: url(images/bg-white-1x1.png) repeat left top transparent;
 }
@@ -112,9 +112,18 @@
   height: 47px; 
   width: 240px; 
   margin-right: 5px; 
+}
+
+.imagerotator-container .buttons ul li .buttons-item {
+  display: block; 
+  float: left;
+  height: 47px; 
+  width: 240px; 
+  margin-right: 5px; 
   text-align: center;
   padding-top: 15px;
 }
+
 .imagerotator-container .buttons {
   bottom: 0;
   height: 47px;

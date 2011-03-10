@@ -68,10 +68,9 @@ $this.find(".imagereel a").hover(
           $(this).find(".buttons-block").css({height:'auto'});
           $(this).find(".buttons-block").slideToggle("slow")
 	    }, function() {
-          $(this).find(".buttons-block").stop();
-          $(this).find(".buttons-block").slideUp("slow");
-          $this.find(".buttons-item").show();
-      });
+	      var $li = $(this);
+	      $(this).find(".buttons-block").stop().slideUp("fast", function(){$li.find('.buttons-item').show()});
+	 });
 
     });
 });
