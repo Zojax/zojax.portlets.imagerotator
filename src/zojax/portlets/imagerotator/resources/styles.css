@@ -11,14 +11,17 @@
   overflow: hidden;
 }
 .imagerotator-container .banner, 
-.imagerotator-container .textreel span {        
+.imagerotator-container .textreel span,
+.imagerotator-container .banners,
+.imagerotator-container .banners .banner-item {        
   width: 984px;
   height: 302px;
   overflow: hidden;
   position: relative;
 }
 .imagerotator-container .imagereel, 
-.imagerotator-container .textreel {
+.imagerotator-container .textreel,
+.imagerotator-container .banners .item-text {
   top: 0;
   left: 0;
   position: absolute;
@@ -32,14 +35,16 @@
 .imagerotator-container .imagereel img {
   float: left;
 }
-.imagerotator-container .textreel span {
+.imagerotator-container .textreel span,
+.imagerotator-container .banners .item-text {
   display: block;
   height: 177px;
   width: 230px;
   float: left;
   padding: 40px 40px 84px 714px;
 }
-.imagerotator-container .textreel span div {
+.imagerotator-container .textreel span div,
+.imagerotator-container .banners .item-text div {
   font-size: 22px;
   color: #fff;
   height: 97px;
