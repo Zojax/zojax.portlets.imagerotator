@@ -22,10 +22,10 @@ var rotate = function($active){
     $active.addClass('active'); //Add active class (the $active is declared in the rotateSwitch function)
     
     //Slider Animation
-    $this.find('.item-text').animate({opacity:0}, {queue: false, duration: 2000});
-    $current.siblings().find('.item-image').animate({opacity:0}, {queue: false, duration: 2000});
-    $current.find('.item-image').animate({opacity:1}, {queue: false, duration: 2000});
-    $current.find('.item-text').delay(800).animate({opacity:1});
+    $this.find('.item-text').animate({opacity:0}, {queue: false, duration: 1000});
+    $current.siblings().find('.item-image').animate({opacity:0}, {queue: false, duration: 1000});
+    $current.find('.item-image').animate({opacity:1}, {queue: false, duration: 1000});
+    $current.find('.item-text').delay(1000).animate({opacity:1});
 
 };
 
