@@ -65,10 +65,11 @@ $this.find(".imagereel a").hover(
     $this.find(".buttons ul li").hover(
 	    function() {
           $(this).find('.buttons-item').hide();
-          $(this).find(".buttons-block").slideToggle("slow");
-        }, function() {
+          $(this).find(".buttons-block").css({height:'auto'});
+          $(this).find(".buttons-block").slideToggle("slow")
+	    }, function() {
           $(this).find(".buttons-block").stop();
-          $this.find(".buttons-block").toggle();
+          $(this).find(".buttons-block").slideUp("slow");
           $this.find(".buttons-item").show();
       });
 
