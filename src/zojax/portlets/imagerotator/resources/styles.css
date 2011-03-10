@@ -17,6 +17,7 @@
   overflow: hidden;
   position: relative;
 }
+.imagerotator-container .banners .banner-item,
 .imagerotator-container .banners .item-text,
 .imagerotator-container .banners .item-image {
   top: 0;
@@ -85,12 +86,12 @@
 .imagerotator-container .buttons ul li:hover {
   background: transparent;
 }
-.imagerotator-container .buttons ul li:hover .buttons-block {
+/*.imagerotator-container .buttons ul li:hover .buttons-block {
   display: block;
 }
 .imagerotator-container .buttons ul li:hover .buttons-item {
   display: none;
-}
+}*/
 .imagerotator-container .buttons ul li,
 .imagerotator-container .buttons li .buttons-block { 
   background: url(images/bg-white-1x1.png) repeat left top transparent;
@@ -121,7 +122,7 @@
 .imagerotator-container .buttons li .buttons-block {
   position: absolute;
   bottom: 0;
-  display: none;
+  /*display: none;*/
   text-align: left;
   padding: 5px 5px 15px 5px;
   width: 230px;

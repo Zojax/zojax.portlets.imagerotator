@@ -1,5 +1,6 @@
 /* zojax image rotator portlet */
 $(document).ready(function() {
+$(".buttons-block").hide();
 
 $('.imagerotator-container').each(function() {
 //Set Default State of each banners piece
@@ -21,9 +22,9 @@ var rotate = function($active){
     
     //Slider Animation
     $(".banners li").hide();
-    $currentText.hide();
-    $(".banners li").eq(triggerID - 1).fadeOut(400);    
+    $currentText.hide();   
     $current.fadeIn(400); 
+    $(".banners li").eq(triggerID - 1).fadeOut(400); 
     $currentText.delay(600).fadeIn(400);
 
 };
@@ -45,14 +46,15 @@ var rotateSwitch = function($active){
 rotateSwitch(); //Run function on launch
 
 //On Hover
-$this.find(".imagereel a").hover(function() {
+$this.find(".imagereel a").hover(
+    function() {
         clearInterval(play); //Stop the rotation
     }, function() {
         rotateSwitch(); //Resume rotation
     });
 
 //On Click
-$this.find(".thumbs a").click(function() {
+    $this.find(".thumbs a").click(function() {
         var $active = $(this); //Activate the clicked thumbs
         //Reset Timer
         clearInterval(play); //Stop the rotation
@@ -60,5 +62,15 @@ $this.find(".thumbs a").click(function() {
         rotateSwitch($active); // Resume rotation
         return false; //Prevent browser jump to link anchor
         });
+
+    $this.find(".buttons ul li").hover(
+	    function() {
+          $(this).find('.buttons-item').hide();
+          $(this).find(".buttons-block").slideToggle("slow");
+        }, function() {
+          $(this).find(".buttons-block").hide();
+          $(this).find(".buttons-item").show();
+      });
+
     });
 });
