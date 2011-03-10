@@ -15,7 +15,6 @@ if ($this.find('.buttons').length)
 var rotate = function($active){
     var triggerID = parseInt($active.attr("rel")) - 1; //Get number of times to slide
     var $current = $(".banners li").eq(triggerID);
-    var $currentText = $current.find('.item-text');
     
     $this.find(".thumbs a").removeClass('active'); //Remove all active class
     $active.addClass('active'); //Add active class (the $active is declared in the rotateSwitch function)
@@ -24,7 +23,7 @@ var rotate = function($active){
     $this.find('.item-text').animate({opacity:0}, {queue: false, duration: 2000});
     $current.siblings().find('.item-image').animate({opacity:0}, {queue: false, duration: 2000});
     $current.find('.item-image').animate({opacity:1}, {queue: false, duration: 2000});
-    $currentText.delay(2000).animate({opacity:1});
+    $current.find('.item-text').delay(2000).animate({opacity:1});
 
 };
 
