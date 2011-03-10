@@ -9,7 +9,7 @@ var play;
 $this.find(".thumbs").show();
 $this.find(".thumbs a:first").addClass("active");
 if ($this.find('.buttons').length)
-    $('.thumbs').css('display', 'none'); //$('.thumbs').empty();
+    $('.thumbs').css('display', 'none');
 
 //thumbs + Slider Function
 var rotate = function($active){
@@ -21,14 +21,10 @@ var rotate = function($active){
     $active.addClass('active'); //Add active class (the $active is declared in the rotateSwitch function)
     
     //Slider Animation
-	$currentText.hide();
-    $current.siblings().animate({opacity:0}, {queue: false, duration: 2000});
-    $current.animate({opacity:1}, {queue: false, duration: 2000});
+	$current.siblings().find('.item-text').fadeOut(400);
+    $current.siblings().find('.item-image').animate({opacity:0}, {queue: false, duration: 2000});
+    $current.find('.item-image').animate({opacity:1}, {queue: false, duration: 2000});
     $currentText.delay(2000).fadeIn(400);
-
-    //$(".banners li").animate({opacity:0}, {queue: false, duration: 2000});
-    //$current.animate({opacity:1}, {queue: false, duration: 2000});
-    //$currentText.delay(600).fadeIn(400);
 
 };
 
