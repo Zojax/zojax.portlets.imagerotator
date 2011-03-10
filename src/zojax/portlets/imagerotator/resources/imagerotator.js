@@ -22,9 +22,9 @@ var rotate = function($active){
     //Slider Animation
     $(".banners li").hide();
     $currentText.hide();
-    $(".banners li").eq(triggerID - 1).fadeOut("fast");    
-    $current.fadeIn("fast"); 
-    $currentText.fadeIn("slow");
+    $(".banners li").eq(triggerID - 1).fadeOut(400);    
+    $current.fadeIn(400); 
+    $currentText.delay(600).fadeIn(400);
 
 };
 
