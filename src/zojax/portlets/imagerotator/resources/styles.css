@@ -13,7 +13,6 @@
 .imagerotator-container .banners,
 .imagerotator-container .banners .banner-item {        
   width: 984px;
-  height: 302px;
   overflow: hidden;
   position: relative;
 }

@@ -21,10 +21,11 @@
 
 <tal:block condition="nothing">
   <metal:block define-macro="rotator">
-    <div class="imagerotator-container">
-      <ul class="banners">
+    <div class="imagerotator-container" tal:define="height context/height">
+      <ul class="banners" tal:attributes="style string:height:${height}px;">
         <li tal:repeat="image context/images" class="banner-item"
-            tal:attributes="class python:repeat['image'].start and 'banner-item first' or 'banner-item'">
+            tal:attributes="class python:repeat['image'].start and 'banner-item first' or 'banner-item';
+                            style string:height:${height}px;">
           <span class="item-text"><div tal:content="structure image/text/cooked">text1</div></span>
           <img tal:attributes="src string:${context/url}/images/${repeat/image/number}/++attribute++image; alt image/title"
                class="item-image" />
