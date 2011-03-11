@@ -65,6 +65,11 @@ class IImageRotatorPortlet(interface.Interface):
         title = _(u'CSS class'),
         required = False)
     
+    height = schema.Int(
+        title = _(u'Height'),
+        default = 302,
+        required = True)
+    
     images = schema.List(title=_(u"Images"),
                          value_type=schema.Object(title=_(u'image'),
                                                   schema=IImageRotatorImage),
