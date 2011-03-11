@@ -51,7 +51,7 @@
           </li>
         </ul>
       </div>
-      <div class="visualClear"></div>
     </div>
+    <div class="visualClear"></div>
   </metal:block>
 </tal:block>
