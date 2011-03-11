@@ -90,17 +90,10 @@
 .imagerotator-container .buttons ul li:hover {
   background: transparent;
 }
-/*.imagerotator-container .buttons ul li:hover .buttons-block {
-  display: block;
-}
-.imagerotator-container .buttons ul li:hover .buttons-item {
-  display: none;
-}*/
 .imagerotator-container .buttons ul li .buttons-item,
 .imagerotator-container .buttons li .buttons-block { 
   background: url(portlet-imagerotator/images/bg-white-1x1.png) repeat left top transparent;
 }
-
 .imagerotator-container .buttons ul li { 
   display: block; 
   float: left;
@@ -108,7 +101,6 @@
   width: 240px; 
   margin-right: 5px; 
 }
-
 .imagerotator-container .buttons ul li .buttons-item {
   display: block; 
   float: left;
@@ -118,7 +110,6 @@
   text-align: center;
   padding-top: 15px;
 }
-
 .imagerotator-container .buttons {
   bottom: 0;
   height: 47px;
@@ -135,11 +126,13 @@
 .imagerotator-container .buttons li .buttons-block {
   position: absolute;
   bottom: 0;
-  /*display: none;*/
   text-align: left;
-  padding: 5px 5px 15px 5px;
+  padding: 0 5px 15px 5px;
   width: 230px;
   font-size: 12px;
+}
+.imagerotator-container .buttons li .buttons-block img {
+  padding-top: 5px;
 }
 .imagerotator-container .buttons-block span {
   border-bottom: 1px solid #454545;
