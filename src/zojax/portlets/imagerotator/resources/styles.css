@@ -120,8 +120,10 @@
 }
 .imagerotator-container .buttons-block span,
 .imagerotator-container .buttons ul li .buttons-item {
-  font-size: 20px;
-  color: #454545;
+  font-size: 22px;
+  font-family: "Lucida Grande";
+  letter-spacing: 6px;
+  color: #323844;
   text-transform: uppercase;
 }
 .imagerotator-container .buttons li .buttons-block {
