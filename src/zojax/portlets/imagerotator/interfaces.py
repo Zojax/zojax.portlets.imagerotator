@@ -26,25 +26,32 @@ _ = MessageFactory('"zojax.portlets.imagerotator"')
 
 class IImageRotatorItem(interface.Interface):
 
-    title = schema.TextLine(title=_(u'Title'), required=False)
+    title = schema.TextLine(title=_(u'Title'), 
+                            description=_(u'Rotated image alternative text'), 
+                            required=False)
     
-    image = ImageField(title=_(u'Picture'), required=False)
+    image = ImageField(title=_(u'Picture'), required=True)
     
-    text = RichText(title=_(u'Text'), required=False)
+    text = RichText(title=_(u'Text'), required=True)
 
     image.mimeTypes = ('image/jpeg', 'image/gif', 'image/png', 'application/octet-stream')
     
     
 class IImageRotatorImage(IImageRotatorItem):
 
-    thumbnail = ImageField(title=_(u'Thumbnail'), required=False)
+    thumbnail = ImageField(title=_(u'Thumbnail'), required=True)
     
     thumbnail.mimeTypes = IImageRotatorItem['image'].mimeTypes
 
 
 class IImageRotatorButton(IImageRotatorItem):
     
-    url = schema.TextLine(title=_(u'URL'), required=False)
+    title = schema.TextLine(title=_(u'Title'), 
+                            description=_(u'Button text'), 
+                            required=True)
+    
+    url = schema.TextLine(title=_(u'URL'), 
+                          description=_(u'Learn more... url'), required=True)
     
 
 class IImageRotatorPortlet(interface.Interface):
