@@ -46,18 +46,20 @@
       <div tal:condition="context/buttons"
            class="buttons">
         <ul>
-          <li tal:repeat="button context/buttons">
+          <tal:buttonItem tal:repeat="button context/buttons">
+          <li tal:condition="button/title">
             <a tal:attributes="href button/url" target="blank_" class="buttons-item"
                tal:content="button/title">Title</a>
             <div class="buttons-block">
               <img tal:condition="button/image" tal:attributes="src string:${context/url}/buttons/${repeat/button/number}/++attribute++image;
                                    alt button/title"
                    src="quickstat_files/attributeimage.jpeg" alt="1" width="230px;" />
-              <span tal:condition="button/title" tal:content="button/title">Title</span>
+              <span tal:content="button/title">Title</span>
               <p tal:condition="button/text" tal:content="structure button/text/cooked">text</p>
               <a tal:condition="button/url" tal:attributes="href button/url" target="blank_">&raquo; Learn more...</a>
             </div>
           </li>
+          </tal:buttonItem>
         </ul>
       </div>
     </div>
