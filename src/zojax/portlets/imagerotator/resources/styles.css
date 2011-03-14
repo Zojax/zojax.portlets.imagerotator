@@ -104,10 +104,11 @@
 .imagerotator-container .buttons ul li .buttons-item {
   display: block; 
   float: left;
-  height: 47px; 
-  width: 240px; 
+  height: 32px; 
+  width: 205px; 
   margin-right: 5px; 
-  text-align: center;
+  text-align: left;
+  padding-left: 35px;
   padding-top: 15px;
 }
 .imagerotator-container .buttons {
