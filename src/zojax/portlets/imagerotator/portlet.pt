@@ -23,16 +23,25 @@
   <metal:block define-macro="rotator">
     <div class="imagerotator-container" tal:define="height context/height">
       <ul class="banners" tal:attributes="style string:height:${height}px;">
-        <li tal:repeat="image context/images" class="banner-item"
+        <tal:imageItem repeat="image context/images">
+        <li tal:condition="image/image" class="banner-item"
             tal:attributes="class python:repeat['image'].start and 'banner-item first' or 'banner-item';
                             style string:height:${height}px;">
-          <span class="item-text"><div tal:content="structure image/text/cooked">text1</div></span>
+          <span tal:condition="image/text" class="item-text"><div tal:content="structure image/text/cooked">text1</div></span>
           <img tal:attributes="src string:${context/url}/images/${repeat/image/number}/++attribute++image; alt image/title"
                class="item-image" />
         </li>
+        </tal:imageItem>
       </ul>
       <div class="thumbs">
-        <a tal:repeat="image context/images" href="#" tal:attributes="rel repeat/image/number; class python:repeat['image'].start and 'active' or nothing"><img tal:attributes="src string:${context/url}/images/${repeat/image/number}/++attribute++thumbnail; alt image/title" /></a>
+        <tal:thumbItem tal:repeat="image context/images">
+        <a tal:condition="image/image" href="#"
+           tal:attributes="rel repeat/image/number; class python:repeat['image'].start and 'active' or nothing">
+          <img tal:condition="image/thumbnail"
+               tal:attributes="src string:${context/url}/images/${repeat/image/number}/++attribute++thumbnail; alt image/title" />
+          <span tal:condition="not: image/thumbnail" tal:replace="repeat/image/number" />
+        </a>
+        </tal:thumbItem>
       </div>
       <div tal:condition="context/buttons"
            class="buttons">
@@ -41,12 +50,12 @@
             <a tal:attributes="href button/url" target="blank_" class="buttons-item"
                tal:content="button/title">Title</a>
             <div class="buttons-block">
-              <img tal:attributes="src string:${context/url}/buttons/${repeat/button/number}/++attribute++image;
+              <img tal:condition="button/image" tal:attributes="src string:${context/url}/buttons/${repeat/button/number}/++attribute++image;
                                    alt button/title"
                    src="quickstat_files/attributeimage.jpeg" alt="1" width="230px;" />
-              <span tal:content="button/title">Title</span>
-              <p tal:content="structure button/text/cooked">text</p>
-              <a tal:attributes="href button/url" target="blank_">&raquo; Learn more...</a>
+              <span tal:condition="button/title" tal:content="button/title">Title</span>
+              <p tal:condition="button/text" tal:content="structure button/text/cooked">text</p>
+              <a tal:condition="button/url" tal:attributes="href button/url" target="blank_">&raquo; Learn more...</a>
             </div>
           </li>
         </ul>
