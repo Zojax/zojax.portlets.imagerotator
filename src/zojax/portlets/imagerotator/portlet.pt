@@ -48,8 +48,7 @@
         <ul>
           <tal:buttonItem tal:repeat="button context/buttons">
           <li tal:condition="button/title" tal:attributes="class python:repeat['button'].end and 'last-button' or nothing">
-            <a tal:attributes="href button/url" target="blank_" class="buttons-item"
-               tal:content="button/title">Title</a>
+            <a href="#" class="buttons-item" tal:content="button/title">Title</a>
             <div class="buttons-block">
               <img tal:condition="button/image" tal:attributes="src string:${context/url}/buttons/${repeat/button/number}/++attribute++image;
                                    alt button/title"
