@@ -6,7 +6,7 @@ $('.imagerotator-container').each(function() {
 //Set Default State of each banners piece
 var $this = $(this);
 var play;
-var first = $this.find(".banner-item.first");
+var first = $this.find("..banner-item.first");
 first.siblings().find('.item-text').css({opacity:0});
 first.siblings().find('.item-image').css({opacity:0});
 first.removeClass('first');
@@ -66,7 +66,7 @@ $this.find(".imagereel a").hover(
 	    function() {
           $(this).find('.buttons-item').hide();
           $(this).find(".buttons-block").css({height:'auto'});
-          $(this).find(".buttons-block").slideToggle("slow");
+          $(this).find(".buttons-block").slideToggle("slow")
 	    }, function() {
 	      var $li = $(this);
 	      $(this).find(".buttons-block").stop().slideUp("fast", function(){$li.find('.buttons-item').show()});
