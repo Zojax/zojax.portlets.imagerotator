@@ -57,6 +57,7 @@
               <span tal:content="button/title">Title</span>
               <p tal:condition="button/text" tal:content="structure button/text/cooked">text</p>
               <p>&raquo; <a tal:condition="button/url" tal:attributes="href button/url" target="blank_">Learn more...</a></p>
+              <br />
             </div>
           </li>
           </tal:buttonItem>
