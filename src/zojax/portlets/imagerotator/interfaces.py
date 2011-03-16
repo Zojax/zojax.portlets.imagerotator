@@ -30,7 +30,7 @@ class IImageRotatorItem(interface.Interface):
                             description=_(u'Rotated image alternative text'), 
                             required=False)
     
-    image = ImageField(title=_(u'Picture'), required=True)
+    image = ImageField(title=_(u'Picture'), required=False)
     
     text = RichText(title=_(u'Text'), required=True)
 
@@ -39,7 +39,7 @@ class IImageRotatorItem(interface.Interface):
     
 class IImageRotatorImage(IImageRotatorItem):
 
-    thumbnail = ImageField(title=_(u'Thumbnail'), required=True)
+    thumbnail = ImageField(title=_(u'Thumbnail'), required=False)
     
     thumbnail.mimeTypes = IImageRotatorItem['image'].mimeTypes
 
