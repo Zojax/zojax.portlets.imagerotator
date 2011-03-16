@@ -72,12 +72,5 @@ $this.find(".imagereel a").hover(
 	      $(this).find(".buttons-block").stop().slideUp("fast", function(){$li.find('.buttons-item').show()});
 	 });
 
-    $this.find(".buttons ul li").click(function() {
-        $(this).find('.buttons-item').hide();
-        $(this).find(".buttons-block").css({height:'auto'});
-        $(this).find(".buttons-block").show();
-        return false;
-        });
-
     });
 });
