@@ -51,7 +51,7 @@ class IImageRotatorButton(IImageRotatorItem):
                             required=True)
     
     url = schema.TextLine(title=_(u'URL'), 
-                          description=_(u'Learn more... url'), required=True)
+                          description=_(u'Learn more... url. Pay attention that http:// is not automatically added'), required=True)
     
 
 class IImageRotatorPortlet(interface.Interface):
