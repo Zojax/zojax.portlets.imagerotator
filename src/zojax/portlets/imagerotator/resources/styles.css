@@ -98,18 +98,23 @@
   display: block; 
   float: left;
   height: 47px; 
-  width: 240px; 
+  width: 241px; 
   margin-right: 5px; 
+}.imagerotator-container .buttons ul li.last-button {
+  margin-right: 0; 
 }
-.imagerotator-container .buttons ul li .buttons-item {
+.imagerotator-container .buttons ul li a.buttons-item {
+  color: #000000;
   display: block; 
   float: left;
   height: 32px; 
-  width: 205px; 
-  margin-right: 5px; 
+  width: 206px;  
   text-align: left;
   padding-left: 35px;
   padding-top: 15px;
+}
+.imagerotator-container .buttons ul li.last-button .buttons-item {
+  width: 207px;
 }
 .imagerotator-container .buttons {
   bottom: 0;
@@ -134,22 +139,25 @@
   width: 230px;
   font-size: 12px;
 }
+.imagerotator-container .buttons li .buttons-block {
+  padding: 0 6px 15px 6px;
+}
 .imagerotator-container .buttons li .buttons-block img {
   padding-top: 5px;
 }
 .imagerotator-container .buttons-block span {
-  border-bottom: 1px solid #454545;
+  border-bottom: 1px solid #84889A;
   display: block;
   width: 170px;
-  padding: 15px;
+  padding: 15px 15px 7px 15px;
   margin: 0 15px;
 }
 .imagerotator-container .buttons-block p {
-  padding: 15px 30px;
+  padding: 15px 30px 0 30px;
   margin: 0;
 }
 .imagerotator-container .buttons-block a {
-  padding: 15px 30px;
+  padding-bottom: 15px;
   color: #454545;
 }
 }
