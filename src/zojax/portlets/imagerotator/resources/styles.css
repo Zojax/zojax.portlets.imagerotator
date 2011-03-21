@@ -159,4 +159,16 @@
 .imagerotator-container .buttons-block a {
   color: #454545;
 }
+
+/* spinner */
+
+.imagerotator-container .banners .preloader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 984px; 
+  height: 100%;
+  background: #fff url(portlet-imagerotator/images/spinner.gif) center center no-repeat;
+}
 }
