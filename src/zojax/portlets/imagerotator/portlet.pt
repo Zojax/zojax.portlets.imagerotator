@@ -24,6 +24,7 @@
     <div class="imagerotator-container" tal:define="height context/height">
       <ul class="banners" tal:attributes="style string:height:${height}px;">
         <tal:imageItem repeat="image context/images">
+        <li class="preloader" tal:condition="repeat/image/start"> </li>
         <li tal:condition="image/image" class="banner-item"
             tal:attributes="class python:repeat['image'].start and 'banner-item first' or 'banner-item';
                             style string:height:${height}px;">

@@ -32,8 +32,6 @@ $.preLoadImages = function(imageList,callback) {
   pic = undefined;
 };
 
-$(".banners").find(".banner-item.first").before("<li class='preloader'> </li>");
-
 var toPreload=[];
 $(".banners").find("img").each(function(){
   toPreload.push($(this).attr("src"));
