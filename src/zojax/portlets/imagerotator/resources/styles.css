@@ -144,6 +144,9 @@
 .imagerotator-container .buttons li .buttons-block img {
   padding-top: 5px;
 }
+.imagerotator-container .buttons-block {
+ display: none;
+}
 .imagerotator-container .buttons-block span {
   border-bottom: 1px solid #84889A;
   display: block;
