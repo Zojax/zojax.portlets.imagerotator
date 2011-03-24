@@ -75,6 +75,8 @@ var rotate = function($active){
 
 //Rotation + Timing Event
 var rotateSwitch = function($active){
+    if !($this.find('.item-image').length)
+        return;
     play = setInterval(function(){ //Set timer - this will repeat itself every 3 seconds
     if (!$active)
         $active = $this.find('.thumbs a.active');
