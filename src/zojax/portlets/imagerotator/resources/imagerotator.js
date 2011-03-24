@@ -75,7 +75,7 @@ var rotate = function($active){
 
 //Rotation + Timing Event
 var rotateSwitch = function($active){
-    if (!$this.find('.item-image').length)
+    if ($this.find('.item-image').length < 2)
         return;
     play = setInterval(function(){ //Set timer - this will repeat itself every 3 seconds
     if (!$active)
