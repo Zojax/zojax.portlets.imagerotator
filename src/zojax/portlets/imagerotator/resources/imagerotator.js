@@ -9,6 +9,7 @@ $.preLoadImages = function(imageList,callback) {
       for (i=0; i < total; i++) {
         pic[i] = new Image();
         pic[i].onload = function() {
+          this.onload = function() {return false};
           loaded++; // should never hit a race condition due to JS's non-threaded nature
           if (loaded == total) {
             if ($.isFunction(callback)) {
@@ -17,16 +18,21 @@ $.preLoadImages = function(imageList,callback) {
           }
         };
         pic[i].src = imageList[i];
+        if (pic[i].complete)
+            pic[i].onload()
       }
     }
     else {
       pic[0] = new Image();
       pic[0].onload = function() {
+        this.onload = function() {return false};
         if ($.isFunction(callback)) {
           callback();
         }
       }
       pic[0].src = imageList;
+      if (pic[0].complete)
+          pic[0].onload()
     }
   }
   pic = undefined;
