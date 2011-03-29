@@ -18,7 +18,7 @@ $.preLoadImages = function(imageList,callback) {
           }
         };
         pic[i].src = imageList[i];
-        if (pic[i].complete)
+        if (pic[i].complete || (jQuery.browser.msie && parseInt(jQuery.browser.version) == 6))
             pic[i].onload()
       }
     }
@@ -31,7 +31,7 @@ $.preLoadImages = function(imageList,callback) {
         }
       }
       pic[0].src = imageList;
-      if (pic[0].complete)
+      if (pic[0].complete || (jQuery.browser.msie && parseInt(jQuery.browser.version) == 6))
           pic[0].onload()
     }
   }
