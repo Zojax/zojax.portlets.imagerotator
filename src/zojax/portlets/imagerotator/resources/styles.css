@@ -40,18 +40,18 @@
 }
 .imagerotator-container .banners .item-text {
   display: block;
-  height: 177px;
-  width: 230px;
-  float: left;
-  padding: 40px 40px 84px 714px;
+  /*height: 177px; width: 230px;*/
+  float: right;
+  left: auto;
+  right: 0;
+  padding: 40px 40px 0 0;
 }
 .imagerotator-container .banners .item-text div {
   font-size: 22px;
   line-height: 26px;
   color: #fff;
-  height: 97px;
-  width: 190px;
-  padding: 30px 20px 45px 20px;
+  /*height: 97px; width: 190px;*/
+  padding: 30px 20px; /*30px 20px 45px 20px*/
   background: transparent url(portlet-imagerotator/images/bg-gray-1x1.png) repeat left top;
 }
 .imagerotator-container .thumbs {
@@ -161,6 +161,18 @@
 }
 .imagerotator-container .buttons-block a {
   color: #454545;
+}
+
+/* width740 */
+
+.width740 .banners,
+.width740 .banners .banner-item,
+.width740 .thumbs,
+.width740 .buttons {
+  width: 740px;
+}
+.width740 .banners .item-text{
+  padding: 20px 20px 0 0;
 }
 
 /* spinner */

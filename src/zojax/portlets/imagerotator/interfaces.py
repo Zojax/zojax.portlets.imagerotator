@@ -32,7 +32,7 @@ class IImageRotatorItem(interface.Interface):
     
     image = ImageField(title=_(u'Picture'), required=False)
     
-    text = RichText(title=_(u'Text'), required=True)
+    text = RichText(title=_(u'Text'), required=False)
 
     image.mimeTypes = ('image/jpeg', 'image/gif', 'image/png', 'application/octet-stream')
     

@@ -21,7 +21,8 @@
 
 <tal:block condition="nothing">
   <metal:block define-macro="rotator">
-    <div class="imagerotator-container" tal:define="height context/height">
+    <div tal:define="height context/height"
+          tal:attributes="class python:context.cssClass and 'imagerotator-container ' + context.cssClass or 'imagerotator-container'">
       <ul class="banners" tal:attributes="style string:height:${height}px;">
         <tal:imageItem repeat="image context/images">
         <li class="preloader" tal:condition="repeat/image/start"> </li>
