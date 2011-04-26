@@ -20,6 +20,8 @@ class ImageRotatorImage(ImageRotatorItem):
     interface.implements(IImageRotatorImage)
 
     thumbnail = FileFieldProperty(IImageRotatorImage['thumbnail'])
+    
+    url = None
 
 
 class ImageRotatorButton(ImageRotatorItem):

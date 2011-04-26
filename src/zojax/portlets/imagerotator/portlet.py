@@ -58,6 +58,7 @@ class ImageRotatorPortlet(object):
                ov.thumbnail = v.thumbnail
             ov.title = v.title
             ov.text = v.text
+            ov.url = v.url
         self.__data__['images'] = old
         
     @getproperty

@@ -42,6 +42,9 @@ class IImageRotatorImage(IImageRotatorItem):
     thumbnail = ImageField(title=_(u'Thumbnail'), required=False)
     
     thumbnail.mimeTypes = IImageRotatorItem['image'].mimeTypes
+    
+    url = schema.TextLine(title=_(u'URL'), 
+                          description=_(u'Pay attention that http:// is not automatically added'), required=False)
 
 
 class IImageRotatorButton(IImageRotatorItem):
