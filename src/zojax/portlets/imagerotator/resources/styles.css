@@ -18,7 +18,8 @@
 }
 .imagerotator-container .banners .banner-item,
 .imagerotator-container .banners .item-text,
-.imagerotator-container .banners .item-image {
+.imagerotator-container .banners .item-image,
+.imagerotator-container .banners .item-url {
   top: 0;
   left: 0;
   position: absolute;
@@ -36,7 +37,11 @@
 }
 
 .imagerotator-container .item-text {
-  z-index: 69;
+  z-index: 71;
+}
+
+.imagerotator-container .banners .item-url {
+  width:100%;
 }
 .imagerotator-container .banners .item-text {
   display: block;

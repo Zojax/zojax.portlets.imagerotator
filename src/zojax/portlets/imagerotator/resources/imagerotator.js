@@ -55,6 +55,7 @@ $('.imagerotator-container').each(function() {
 var $this = $(this);
 var play;
 var first = $this.find(".banner-item.first");
+first.css({'z-index' : '70'});
 first.siblings().find('.item-text').css({opacity:0});
 first.siblings().find('.item-image').css({opacity:0});
 first.removeClass('first');
@@ -70,9 +71,11 @@ var rotate = function($active){
     $active.addClass('active'); //Add active class (the $active is declared in the rotateSwitch function)
     
     //Slider Animation
-    $this.find('.item-text').animate({opacity:0}, {queue: false, duration: 1000});
+    $this.find('.item-text').animate({opacity:0}, {queue: false, duration: 1000});	
+	$current.siblings().css({'z-index' : '69'});
     $current.siblings().find('.item-image').animate({opacity:0}, {queue: false, duration: 1000});
     $current.find('.item-image').animate({opacity:1}, {queue: false, duration: 1000});
+	$current.css({'z-index' : '70'});
     $current.find('.item-text').delay(1000).animate({opacity:1});
 
 };

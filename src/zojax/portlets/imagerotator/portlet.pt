@@ -26,11 +26,15 @@
       <ul class="banners" tal:attributes="style string:height:${height}px;">
         <tal:imageItem repeat="image context/images">
         <li class="preloader" tal:condition="repeat/image/start"> </li>
-        <li tal:condition="image/image" class="banner-item"
+        <li tal:condition="image/image"
             tal:attributes="class python:repeat['image'].start and 'banner-item first' or 'banner-item';
                             style string:height:${height}px;">
           <span tal:condition="image/text" class="item-text"><div tal:content="structure image/text/cooked">text1</div></span>
-          <img tal:attributes="src string:${context/url}/images/${repeat/image/number}/++attribute++image; alt image/title"
+          <a tal:condition="image/url" tal:attributes="href image/url; style string:height:${height}px;" class="item-url">
+            <img tal:attributes="src string:${context/url}/images/${repeat/image/number}/++attribute++image; alt image/title"
+                 class="item-image" />
+          </a>
+          <img tal:condition="not: image/url" tal:attributes="src string:${context/url}/images/${repeat/image/number}/++attribute++image; alt image/title"
                class="item-image" />
         </li>
         </tal:imageItem>
