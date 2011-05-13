@@ -111,7 +111,6 @@ $this.find(".imagereel a").hover(
         //Reset Timer
         clearInterval(play); //Stop the rotation
         rotate($active); //Trigger rotation immediately
-        rotateSwitch($active); // Resume rotation
         return false; //Prevent browser jump to link anchor
         };
     $this.find(".thumbs a").click(iconhover).hover(iconhover, function(){
