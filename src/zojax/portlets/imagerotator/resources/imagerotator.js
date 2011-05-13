@@ -114,7 +114,12 @@ $this.find(".imagereel a").hover(
         rotateSwitch($active); // Resume rotation
         return false; //Prevent browser jump to link anchor
         };
-    $this.find(".thumbs a").click(iconhover).hover(iconhover);
+    $this.find(".thumbs a").click(iconhover).hover(iconhover, function(){
+        var $active = $(this); //Activate the clicked thumbs
+        //Reset Timer
+        rotateSwitch($active); // Resume rotation
+        return false; //Prevent browser jump to link anchor
+        });
 
     $this.find(".buttons ul li").hover(
 	    function() {
