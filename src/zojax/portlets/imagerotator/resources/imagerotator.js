@@ -106,14 +106,15 @@ $this.find(".imagereel a").hover(
     });
 
 //On Click
-    $this.find(".thumbs a").click(function() {
+    var iconhover = function() {
         var $active = $(this); //Activate the clicked thumbs
         //Reset Timer
         clearInterval(play); //Stop the rotation
         rotate($active); //Trigger rotation immediately
         rotateSwitch($active); // Resume rotation
         return false; //Prevent browser jump to link anchor
-        });
+        };
+    $this.find(".thumbs a").click(iconhover).hover(iconhover);
 
     $this.find(".buttons ul li").hover(
 	    function() {
