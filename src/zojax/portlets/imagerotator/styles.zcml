@@ -6,7 +6,7 @@
   <!-- styles -->
   <zojax:resourceinclude
      name="zojax-portlets-imagerotator.css"
-     type="stylesheet"
+     library="zojax.portlets.imagerotator" type="stylesheet"
      path="portlet-imagerotator/styles.css" filetype="zrt" />
 
   <zojax:resourcedirectory
