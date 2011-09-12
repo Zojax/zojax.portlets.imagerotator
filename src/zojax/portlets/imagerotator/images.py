@@ -24,7 +24,7 @@ from zope.component import getAdapters, queryMultiAdapter
 
 from zojax.portlet.interfaces import IPortletManager, IPortletsExtension
 from zojax.portlet.browser.interfaces import IPortletManagerPublicMarker
-
+from zope.security.interfaces import Unauthorized
 
 class Images(object):
 
@@ -40,10 +40,17 @@ class Images(object):
         context = self.context
         try:
             return LocationProxy(context.images[int(name)-1], self.context, name)
-        except (TypeError, ValueError, IndexError), e:
+        except ValueError, e:
+            # 403 error
+            raise Unauthorized("Access to images folder denied")
+        except IndexError, e:
+            # 404 error
+            raise NotFound(self.context, self.__name__, request)
+        except TypeError, e:
             raise
+
         raise NotFound(self.context, self.__name__, request)
-    
+
 
 class Buttons(Images):
 

@@ -52,5 +52,9 @@
   </class>
   
   <include file="styles.zcml" />
+
+  <browser:defaultView
+     name="++attribute++image"
+     for=".interfaces.IImageRotatorImage" />
   
 </configure>
