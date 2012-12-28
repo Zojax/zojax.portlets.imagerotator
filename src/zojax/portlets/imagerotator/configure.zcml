@@ -7,19 +7,21 @@
 
   <i18n:registerTranslations directory="locales" />
 
+  <include file="styles.zcml" />
+
   <zojax:portlet
      name="portlet.imagerotator"
      title="Image rotator"
      class=".portlet.ImageRotatorPortlet"
      schema=".interfaces.IImageRotatorPortlet" />
-     
+
   <!-- images access -->
   <adapter
      name="images"
      for=".interfaces.IImageRotatorPortlet zope.publisher.interfaces.http.IHTTPRequest"
      provides="zope.publisher.interfaces.IPublishTraverse"
      factory=".images.Images" />
-  
+
   <adapter
      name="buttons"
      for=".interfaces.IImageRotatorPortlet zope.publisher.interfaces.http.IHTTPRequest"
@@ -29,11 +31,11 @@
   <class class=".images.Images">
     <allow interface="zope.publisher.interfaces.IPublishTraverse" />
   </class>
-  
+
   <class class=".images.Buttons">
     <allow interface="zope.publisher.interfaces.IPublishTraverse" />
   </class>
-     
+
   <zojax:pagelet
      type="portlet.view"
      template="portlet.pt"
@@ -46,18 +48,22 @@
      require="jquery"
      path="portlet-imagerotator/imagerotator.js" />
 
+  <zojax:resourceinclude
+     name="dragdrop.js"
+     library="zojax" type="javascript"
+     require="jquery jquery-plugins"
+     file="resources/dragdrop.js"/>
+
   <class class=".forms.ImageRotatorImage">
     <allow interface=".interfaces.IImageRotatorImage" />
   </class>
-  
+
   <class class=".forms.ImageRotatorButton">
     <allow interface=".interfaces.IImageRotatorButton" />
   </class>
-  
-  <include file="styles.zcml" />
 
   <browser:defaultView
      name="++attribute++image"
      for=".interfaces.IImageRotatorImage" />
-  
+
 </configure>

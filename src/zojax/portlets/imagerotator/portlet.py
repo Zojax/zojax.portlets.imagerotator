@@ -31,14 +31,14 @@ class ImageRotatorPortlet(object):
     def update(self):
         include('zojax.portlets.imagerotator')
         self.url = publicAbsoluteURL(self, self.request)
-        
+
     def isAvailable(self):
         return bool(self.images)
-    
+
     @getproperty
     def images(self):
         return self.__data__.get('images', [])
-    
+
     @setproperty
     def images(self, value):
         old = self.images
@@ -59,12 +59,16 @@ class ImageRotatorPortlet(object):
             ov.title = v.title
             ov.text = v.text
             ov.url = v.url
+            ov.position = v.position
+
+        # NOTE: sort by position
+        old = sorted(old, key=lambda x: x.position)
         self.__data__['images'] = old
-        
+
     @getproperty
     def buttons(self):
         return self.__data__.get('buttons', [])
-    
+
     @setproperty
     def buttons(self, value):
         old = self.buttons
@@ -83,5 +87,9 @@ class ImageRotatorPortlet(object):
             ov.title = v.title
             ov.text = v.text
             ov.url = v.url
+            ov.position = v.position
+
+        # NOTE: sort by position
+        old = sorted(old, key=lambda x: x.position)
         self.__data__['buttons'] = old
-                        
+

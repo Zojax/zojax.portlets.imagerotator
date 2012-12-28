@@ -1,8 +1,6 @@
 /* zrt-cssregistry: */
 
-@media all { 
 
-  
 /* image rotator */
 
 .imagerotator-container {
@@ -11,7 +9,7 @@
   overflow: hidden;
 }
 .imagerotator-container .banners,
-.imagerotator-container .banners .banner-item {        
+.imagerotator-container .banners .banner-item {
   width: 984px;
   overflow: hidden;
   position: relative;
@@ -79,40 +77,40 @@
 .imagerotator-container .thumbs a img {
   background: transparent;
   filter: alpha(Opacity=50);
-  -moz-opacity: 0.5; 
-  -khtml-opacity: 0.5; 
-   opacity: 0.5; 
+  -moz-opacity: 0.5;
+  -khtml-opacity: 0.5;
+   opacity: 0.5;
 }
-.imagerotator-container .thumbs a.active img, 
+.imagerotator-container .thumbs a.active img,
 .imagerotator-container .thumbs a:hover img {
   background: transparent;
   filter: alpha(Opacity=100);
-  -moz-opacity: 1.0; 
-  -khtml-opacity: 1.0; 
-   opacity: 1.0; 
+  -moz-opacity: 1.0;
+  -khtml-opacity: 1.0;
+   opacity: 1.0;
 }
 
 .imagerotator-container .buttons ul li:hover {
   background: transparent;
 }
 .imagerotator-container .buttons ul li .buttons-item,
-.imagerotator-container .buttons li .buttons-block { 
+.imagerotator-container .buttons li .buttons-block {
   background: url(portlet-imagerotator/images/bg-white-1x1.png) repeat left top transparent;
 }
-.imagerotator-container .buttons ul li { 
-  display: block; 
+.imagerotator-container .buttons ul li {
+  display: block;
   float: left;
-  height: 47px; 
-  width: 241px; 
-  margin-right: 5px; 
+  height: 47px;
+  width: 241px;
+  margin-right: 5px;
 }.imagerotator-container .buttons ul li.last-button {
-  margin-right: 0; 
+  margin-right: 0;
 }
 .imagerotator-container .buttons ul li a.buttons-item {
-  display: block; 
+  display: block;
   float: left;
-  height: 32px; 
-  width: 206px;  
+  height: 32px;
+  width: 206px;
   text-align: left;
   padding-left: 35px;
   padding-top: 15px;
@@ -187,8 +185,70 @@
   top: 0;
   left: 0;
   z-index: 90;
-  width: 984px; 
+  width: 984px;
   height: 100%;
   background: #fff url(portlet-imagerotator/images/spinner.gif) center center no-repeat;
 }
+
+/* edit form */
+.form-widgets-images .multi-widget .row,
+.form-widgets-buttons .multi-widget .row {
+  background: #fff url(portlet-imagerotator/images/sprite.png) -145px 2px no-repeat;
+  border: 1px solid #D3D3D3;
+  margin: 0 0 3px 0!important;
+  padding: 3px 3px 3px 17px;
+}
+.form-widgets-images .closed,
+.form-widgets-images .open,
+.form-widgets-buttons .closed,
+.form-widgets-buttons .open {
+  background: url(portlet-imagerotator/images/sprite.png) 730px -18px no-repeat;
+}
+.form-widgets-images .open,
+.form-widgets-buttons .open {
+  background-position: 747px -34px;
+}
+.form-widgets-images .object-widget,
+.form-widgets-buttons .object-widget {
+  clear: both;
+  overflow: hidden;
+}
+.form-widgets-images .multi-widget-input .label,
+.form-widgets-images .multi-widget-input .widget,
+.form-widgets-buttons .multi-widget-input .label,
+.form-widgets-buttons .multi-widget-input .widget {
+  margin: 3px 0;
+}
+.form-widgets-images .multi-widget-input .label,
+.form-widgets-buttons .multi-widget-input .label {
+  float: left;
+  width: 10%;
+  clear: both;
+}
+.form-widgets-images .multi-widget-input .widget,
+.form-widgets-buttons .multi-widget-input .widget {
+  width: 90%;
+  float: right;
+}
+.form-widgets-images .multi-widget-input .option .label,
+.form-widgets-buttons .multi-widget-input .option .label {
+  float: none;
+}
+.form-widgets-images .multi-widget .z-form-field,
+.form-widgets-buttons .multi-widget .z-form-field {
+  margin-top: 0;
+}
+.form-widgets-images .imagefield-field,
+.form-widgets-buttons .imagefield-field {
+  margin-top: 4px;
+}
+.z-form .form-widgets-images .object-widget input,
+.wizard .form-widgets-images .x-html-editor-wrap,
+.z-form .form-widgets-buttons .object-widget input,
+.wizard .form-widgets-buttons .x-html-editor-wrap {
+  margin-left: 0px!important;
+ }
+.wizard .form-widgets-images .x-html-editor-wrap,
+.wizard .form-widgets-buttons .x-html-editor-wrap {
+  width: 598px!important;
 }
