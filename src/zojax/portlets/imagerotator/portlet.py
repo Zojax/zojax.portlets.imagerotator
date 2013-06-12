@@ -11,19 +11,15 @@
 # FOR A PARTICULAR PURPOSE.
 #
 ##############################################################################
-from rwproperty import setproperty, getproperty
+
 """
 
 $Id$
 """
-from zope import interface
-from zope.component import queryUtility
-from zope.app.component.hooks import getSite
-from zojax.catalog.interfaces import ICatalog
-from zojax.resourcepackage.library import include
-from zojax.portlet.browser.portlet import publicAbsoluteURL
+from rwproperty import setproperty, getproperty
 
-from interfaces import IImageRotatorPortlet
+from zojax.portlet.browser.portlet import publicAbsoluteURL
+from zojax.resourcepackage.library import include
 
 
 class ImageRotatorPortlet(object):
@@ -93,3 +89,41 @@ class ImageRotatorPortlet(object):
         old = sorted(old, key=lambda x: x.position)
         self.__data__['buttons'] = old
 
+
+class ImageRotatorSimplePortlet(object):
+    """ """
+
+    def update(self):
+        include('zojax.portlets.imagerotator')
+        include('jflow.plus')
+        self.url = publicAbsoluteURL(self, self.request)
+
+    def isAvailable(self):
+        return bool(self.images)
+
+    @getproperty
+    def images(self):
+        return self.__data__.get('images', [])
+
+    @setproperty
+    def images(self, value):
+        old = self.images
+        if value is not None:
+            if len(value) > len(old):
+                old.extend(value[len(old):])
+            else:
+                old = old[:len(value)]
+        else:
+            self.__data__['images'] = []
+            return
+        for k, v in enumerate(value):
+            ov = old[k]
+            if v.image.data:
+                ov.image = v.image
+            ov.title = v.title
+            ov.url = v.url
+            ov.position = v.position
+
+        # NOTE: sort by position
+        old = sorted(old, key=lambda x: x.position)
+        self.__data__['images'] = old

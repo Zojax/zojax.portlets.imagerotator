@@ -65,6 +65,34 @@ class IImageRotatorImage(IImageRotatorItem):
         required=False)
 
 
+class IImageRotatorSimpleImage(interface.Interface):
+
+    title = schema.TextLine(
+        title=_(u'Title'),
+        description=_(u'Rotated image alternative text'),
+        required=False)
+
+    url = schema.TextLine(
+        title=_(u'URL'),
+        description=_(u'Pay attention that http:// is not automatically\
+                        added'),
+        required=False)
+
+    image = ImageField(
+        title=_(u'Picture'),
+        required=False)
+
+    image.mimeTypes = (
+        'image/jpeg',
+        'image/gif',
+        'image/png',
+        'application/octet-stream')
+
+    position = schema.TextLine(
+        title=_(u'Position'),
+        required=False)
+
+
 class IImageRotatorButton(IImageRotatorItem):
 
     title = schema.TextLine(
@@ -115,5 +143,17 @@ class IImageRotatorPortlet(interface.Interface):
         value_type=schema.Object(
             title=_(u'button'),
             schema=IImageRotatorButton),
+        default=[],
+        required=False)
+
+
+class IImageRotatorSimplePortlet(interface.Interface):
+    """ portlet interface """
+
+    images = schema.List(
+        title=_(u"Images"),
+        value_type=schema.Object(
+            title=_(u'image'),
+            schema=IImageRotatorSimpleImage),
         default=[],
         required=False)

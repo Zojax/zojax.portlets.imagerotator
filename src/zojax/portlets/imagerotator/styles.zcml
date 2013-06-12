@@ -9,6 +9,11 @@
      library="zojax" type="stylesheet"
      path="portlet-imagerotator/styles.css" filetype="zrt" />
 
+  <zojax:resourceinclude
+     name="jflow.style.css"
+     library="zojax" type="stylesheet"
+     path="portlet-imagerotator/jflow.style.css" filetype="zrt" />
+
   <zojax:resourcedirectory
      name="portlet-imagerotator"
      directory="resources"

@@ -1,11 +1,32 @@
-from zope import component, interface, schema
-from z3c.form.object import registerFactoryAdapter
-from zojax.filefield.field import FileFieldProperty
+##############################################################################
+#
+# Copyright (c) 2008 Zope Corporation and Contributors.
+# All Rights Reserved.
+#
+# This software is subject to the provisions of the Zope Public License,
+# Version 2.1 (ZPL).  A copy of the ZPL should accompany this distribution.
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY AND ALL EXPRESS OR IMPLIED
+# WARRANTIES ARE DISCLAIMED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+# WARRANTIES OF TITLE, MERCHANTABILITY, AGAINST INFRINGEMENT, AND FITNESS
+# FOR A PARTICULAR PURPOSE.
+#
+##############################################################################
+
+"""
+
+$Id$
+"""
+
+from zope import interface
 from zope.schema.fieldproperty import FieldProperty
 
-from interfaces import _, IImageRotatorImage, IImageRotatorButton, IImageRotatorItem
-from zojax.persistent.fields.fields import RichText
+from z3c.form.object import registerFactoryAdapter
+
+from zojax.filefield.field import FileFieldProperty
 from zojax.richtext.field import RichTextProperty
+
+from interfaces import IImageRotatorImage, IImageRotatorButton, \
+    IImageRotatorItem, IImageRotatorSimpleImage
 
 
 class ImageRotatorItem(object):
@@ -27,8 +48,19 @@ class ImageRotatorImage(ImageRotatorItem):
     url = None
 
 
-class ImageRotatorButton(ImageRotatorItem):
+class ImageRotatorSimpleImage(object):
+    interface.implements(IImageRotatorSimpleImage)
 
+    title = None
+
+    url = None
+
+    image = FileFieldProperty(IImageRotatorItem['image'])
+
+    position = FieldProperty(IImageRotatorItem['position'])
+
+
+class ImageRotatorButton(ImageRotatorItem):
     interface.implements(IImageRotatorButton)
 
     image = FileFieldProperty(IImageRotatorButton['image'])
@@ -38,5 +70,6 @@ class ImageRotatorButton(ImageRotatorItem):
 
 registerFactoryAdapter(IImageRotatorImage, ImageRotatorImage)
 
-registerFactoryAdapter(IImageRotatorButton, ImageRotatorButton)
+registerFactoryAdapter(IImageRotatorSimpleImage, ImageRotatorSimpleImage)
 
+registerFactoryAdapter(IImageRotatorButton, ImageRotatorButton)

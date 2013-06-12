@@ -1,0 +1,57 @@
+<div id="sliderContainer">
+
+<tal:slider condition="context/images">
+    <div id="mySlides">
+        <tal:block repeat="image context/images">
+            <div tal:define="imgid string:${repeat/image/number}"
+                 tal:attributes="id string:slide${imgid}"
+                 class="slide">
+
+                <a tal:condition="image/url"
+                   tal:attributes="href image/url">
+                    <img tal:attributes="src string:${context/url}/images/${repeat/image/number}/++attribute++image;
+                                         alt image/title" />
+                </a>
+
+                <img tal:condition="not: image/url"
+                     tal:attributes="src string:${context/url}/images/${repeat/image/number}/++attribute++image;
+                                     alt image/title" />
+
+            </div>
+        </tal:block>
+    </div>
+
+    <div id="myController">
+        <tal:block repeat="image context/images">
+            <span class="jFlowControl"></span>
+        </tal:block>
+    </div>
+
+    <div class="jFlowPrev"></div>
+    <div class="jFlowNext"></div>
+
+    <script type="text/javascript">
+        $(function () {
+            $("#myController").jFlow({
+                controller: ".jFlowControl", // must be class, use . sign
+                slideWrapper: "#jFlowSlider", // must be id, use # sign
+                slides: "#mySlides",  // the div where all your sliding divs are nested in
+                selectedWrapper: "jFlowSelected",  // just pure text, no sign
+                effect: "flow", //this is the slide effect (rewind or flow)
+                width: "740px",  // this is the width for the content-slider
+                height: "363px",  // this is the height for the content-slider
+                duration: 400,  // time in milliseconds to transition one slide
+                pause: 5000, //time between transitions
+                prev: ".jFlowPrev", // must be class, use . sign
+                next: ".jFlowNext", // must be class, use . sign
+                auto: true
+            });
+        });
+    </script>
+</tal:slider>
+
+<tal:noslider condition="not: context/images">
+    There are no images in the slider.
+</tal:noslider>
+
+</div>

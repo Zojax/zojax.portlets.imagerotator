@@ -15,10 +15,22 @@
      class=".portlet.ImageRotatorPortlet"
      schema=".interfaces.IImageRotatorPortlet" />
 
+  <zojax:portlet
+     name="portlet.imagerotatorsimple"
+     title="Image rotator simple"
+     class=".portlet.ImageRotatorSimplePortlet"
+     schema=".interfaces.IImageRotatorSimplePortlet" />
+
   <!-- images access -->
   <adapter
      name="images"
      for=".interfaces.IImageRotatorPortlet zope.publisher.interfaces.http.IHTTPRequest"
+     provides="zope.publisher.interfaces.IPublishTraverse"
+     factory=".images.Images" />
+
+  <adapter
+     name="images"
+     for=".interfaces.IImageRotatorSimplePortlet zope.publisher.interfaces.http.IHTTPRequest"
      provides="zope.publisher.interfaces.IPublishTraverse"
      factory=".images.Images" />
 
@@ -41,6 +53,11 @@
      template="portlet.pt"
      for=".interfaces.IImageRotatorPortlet" />
 
+  <zojax:pagelet
+     type="portlet.view"
+     template="portletsimple.pt"
+     for=".interfaces.IImageRotatorSimplePortlet" />
+
   <zojax:resourceinclude
      name="zojax.portlets.imagerotator"
      type="javascript"
@@ -54,8 +71,19 @@
      require="jquery jquery-plugins"
      file="resources/dragdrop.js"/>
 
+  <zojax:resourceinclude
+     name="jflow.plus"
+     type="javascript"
+     library="jflow.plus"
+     require="jquery"
+     path="portlet-imagerotator/jflow.plus.min.js" />
+
   <class class=".forms.ImageRotatorImage">
     <allow interface=".interfaces.IImageRotatorImage" />
+  </class>
+
+  <class class=".forms.ImageRotatorSimpleImage">
+    <allow interface=".interfaces.IImageRotatorSimpleImage" />
   </class>
 
   <class class=".forms.ImageRotatorButton">
@@ -65,5 +93,9 @@
   <browser:defaultView
      name="++attribute++image"
      for=".interfaces.IImageRotatorImage" />
+
+  <browser:defaultView
+     name="++attribute++image"
+     for=".interfaces.IImageRotatorSimpleImage" />
 
 </configure>
