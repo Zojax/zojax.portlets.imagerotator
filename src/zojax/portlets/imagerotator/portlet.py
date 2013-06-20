@@ -95,7 +95,7 @@ class ImageRotatorSimplePortlet(object):
 
     def update(self):
         include('zojax.portlets.imagerotator')
-        include('jflow.plus')
+        include('jquery.orbit-1.2.3')
         self.url = publicAbsoluteURL(self, self.request)
 
     def isAvailable(self):

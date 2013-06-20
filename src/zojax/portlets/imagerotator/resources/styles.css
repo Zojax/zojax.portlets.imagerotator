@@ -252,3 +252,31 @@
 .wizard .form-widgets-buttons .x-html-editor-wrap {
   width: 598px!important;
 }
+
+
+#sliderContainer, #featured {
+  width: 740px;
+  height: 363px;
+}
+#sliderContainer .orbit-bullets {
+  top: 325px;
+  margin-left: 0;
+  left: 30px;
+  bottom: 0;
+}
+#sliderContainer .orbit-bullets li {
+  background: url(portlet-imagerotator/images/bullet.png) no-repeat scroll 0 0 transparent;
+  width: 15px;
+  height: 15px;
+  margin-left: 0;
+  margin-right: 11px;
+}
+#sliderContainer .orbit-bullets li.active {
+  background-position: -15px 0;
+}
+#sliderContainer .orbit-bullets li:hover {
+  background-position: -32px 0;
+}
+#sliderContainer div.timer {
+  display: none;
+}

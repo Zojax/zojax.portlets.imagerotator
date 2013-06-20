@@ -72,11 +72,11 @@
      file="resources/dragdrop.js"/>
 
   <zojax:resourceinclude
-     name="jflow.plus"
+     name="jquery.orbit-1.2.3"
      type="javascript"
-     library="jflow.plus"
+     library="jquery.orbit-1.2.3"
      require="jquery"
-     path="portlet-imagerotator/jflow.plus.min.js" />
+     path="portlet-imagerotator/jquery.orbit-1.2.3.min.js" />
 
   <class class=".forms.ImageRotatorImage">
     <allow interface=".interfaces.IImageRotatorImage" />
