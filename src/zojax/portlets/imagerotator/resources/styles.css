@@ -255,8 +255,8 @@
 
 
 #sliderContainer, #featured {
-  width: 740px;
-  height: 363px;
+  width: 740px !important;
+  height: 363px !important;
 }
 #sliderContainer .orbit-bullets {
   top: 325px;

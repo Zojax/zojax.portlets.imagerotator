@@ -1,7 +1,7 @@
 <div id="sliderContainer">
 
 <tal:slider condition="context/images">
-    <div id="featured" style="width:740px;height:363px;">
+    <div id="featured">
         <tal:block repeat="image context/images">
             <tal:block tal:define="imgid string:${repeat/image/number}">
 
