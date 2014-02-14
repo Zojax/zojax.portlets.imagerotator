@@ -1,0 +1,82 @@
+===================
+HTML Source portlet
+===================
+
+    >>> from zope import component, interface
+    >>> from zope.testbrowser.testing import Browser
+    >>> from zojax.extensions.interfaces import IExtensible
+    >>> from zope.app.testing.functional import getRootFolder
+
+    >>> root = getRootFolder()
+    >>> interface.alsoProvides(root, IExtensible)
+
+
+change portlet settings
+
+    >>> actor = Browser()
+    >>> actor.handleErrors = False
+    >>> actor.addHeader("Authorization", "Basic mgr:mgrpw")
+    >>> actor.open("http://localhost/++extensions++/")
+    >>> actor.getLink('Portlets').click()
+
+set portlets manager
+
+    >>> actor.getLink('Left column portlets').click()
+    >>> actor.open('http://localhost/++extensions++/portlets/columns.left/?form.widgets.portletIds:list=portlet.imagerotator&form.widgets.portletIds:list=portlet.imagerotatorsimple&form.buttons.save=Save&form.widgets.status=1')
+
+setup portlet
+
+    >>> actor.open('http://localhost/++extensions++/portlets/columns.left/')
+    >>> actor.getLink('Image rotator').click()
+    >>> actor.getControl('Label').value = u'Test imagerotator'
+    >>> actor.getControl(name="form.buttons.save").click()
+
+check portlet
+
+    >>> user = Browser()
+    >>> user.handleErrors = False
+    >>> user.addHeader("Authorization", "Basic mgr:mgrpw")
+    >>> user.open("http://localhost/test.html")
+    >>> print user.contents
+    <html>
+    ...
+        <table>
+          <tr>
+    	<td>...</td>
+    	<td><div id="z-portal-workspace"><div id="z-portal-viewspace"><div id="z-content"><div>zope.mgr</div>
+    <div>Manager</div></div></div></div></td>
+          </tr>
+        </table>
+      </body>
+    </html>
+
+
+setup portlet simpleimagerotator
+
+    >>> actor.open('http://localhost/++extensions++/portlets/columns.left/')
+    >>> actor.getLink('Image rotator simple').click()
+    >>> actor.getControl(name="form.widgets.images.buttons.add").click()
+    >>> actor.getControl('Title').value = u'Title'
+    >>> actor.getControl('URL').value = u'http://test.url.com'
+    >>> actor.getControl('Position ').value = '1'
+    >>> actor.getControl(name="form.buttons.save").click()
+    >>> print actor.contents
+
+check portlet
+
+    >>> user = Browser()
+    >>> user.handleErrors = False
+    >>> user.addHeader("Authorization", "Basic mgr:mgrpw")
+    >>> user.open("http://localhost/test.html")
+    >>> print user.contents
+    <html>
+    ...
+        <table>
+          <tr>
+    	<td>...</td>
+    	<td><div id="z-portal-workspace"><div id="z-portal-viewspace"><div id="z-content"><div>zope.mgr</div>
+    <div>Manager</div></div></div></div></td>
+          </tr>
+        </table>
+      </body>
+    </html>

@@ -1,0 +1,17 @@
+<configure 
+   xmlns="http://namespaces.zope.org/zope"
+   xmlns:zojax="http://namespaces.zope.org/zojax">
+
+  <zojax:pagelet
+     name="test.html"
+     for="*"
+     template="test.pt"
+     permission="zope.Public" />
+
+  <zojax:portletManager
+     name="columns.left"
+     class="zojax.portlet.manager.PortletManagerWithStatus"
+     schema="zojax.portlet.interfaces.IPortletManagerWithStatus"
+     title="Left column portlets" />
+
+</configure>
