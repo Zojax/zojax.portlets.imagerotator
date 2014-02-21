@@ -60,7 +60,6 @@ setup portlet simpleimagerotator
     >>> actor.getControl('URL').value = u'http://test.url.com'
     >>> actor.getControl('Position ').value = '1'
     >>> actor.getControl(name="form.buttons.save").click()
-    >>> print actor.contents
 
 check portlet
 
