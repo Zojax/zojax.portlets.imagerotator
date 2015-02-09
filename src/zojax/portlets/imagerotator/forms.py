@@ -59,6 +59,8 @@ class ImageRotatorSimpleImage(object):
 
     position = FieldProperty(IImageRotatorItem['position'])
 
+    text = RichTextProperty(IImageRotatorSimpleImage['text'])
+
 
 class ImageRotatorButton(ImageRotatorItem):
     interface.implements(IImageRotatorButton)

@@ -92,6 +92,11 @@ class IImageRotatorSimpleImage(interface.Interface):
         title=_(u'Position'),
         required=False)
 
+    text = RichText(
+        title=_(u'CSS Text'),
+        required=False,
+        default=u"")
+
 
 class IImageRotatorButton(IImageRotatorItem):
 

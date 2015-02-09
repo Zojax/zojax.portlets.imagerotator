@@ -281,3 +281,27 @@
 #sliderContainer div.timer {
   display: none;
 }
+
+#sliderContainer a {
+    text-decoration: none;
+}
+.css-text {
+    width: 960px;
+    line-height: normal;
+    margin: 20px auto;
+}
+.css-text .css-text-title,
+css-text .css-text-descr {
+    font-weight: bold;
+}
+.css-text .css-text-title {
+    font-size: 56px;
+    line-height: 60px;
+}
+.css-text .css-text-descr {
+    font-size: 16px;
+}
+.fiximgs .css-text {
+    position: absolute;
+    top: 0;
+}

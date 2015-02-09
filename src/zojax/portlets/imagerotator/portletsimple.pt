@@ -1,19 +1,20 @@
 <div id="sliderContainer">
 
 <tal:slider condition="context/images">
-    <div id="featured">
+    <div id="featured" class="fiximgs">
         <tal:block repeat="image context/images">
             <tal:block tal:define="imgid string:${repeat/image/number}">
 
-                <a tal:condition="image/url"
+                <div tal:omit-tag="image/url">
+                <a tal:omit-tag="not: image/url"
                    tal:attributes="href image/url">
                     <img tal:attributes="src string:${context/url}/images/${repeat/image/number}/++attribute++image;
                                          alt image/title" />
+                    <div tal:condition="image/text"
+                         tal:content="structure image/text/cooked"
+                         class="css-text"> </div>
                 </a>
-
-                <img tal:condition="not: image/url"
-                     tal:attributes="src string:${context/url}/images/${repeat/image/number}/++attribute++image;
-                                     alt image/title" />
+                </div>
 
             </tal:block>
         </tal:block>

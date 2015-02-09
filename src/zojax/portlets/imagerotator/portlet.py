@@ -51,7 +51,7 @@ class ImageRotatorPortlet(object):
             if v.image.data:
                 ov.image = v.image
             if v.thumbnail.data:
-               ov.thumbnail = v.thumbnail
+                ov.thumbnail = v.thumbnail
             ov.title = v.title
             ov.text = v.text
             ov.url = v.url
@@ -123,6 +123,7 @@ class ImageRotatorSimplePortlet(object):
             ov.title = v.title
             ov.url = v.url
             ov.position = v.position
+            ov.text = v.text
 
         # NOTE: sort by position
         old = sorted(old, key=lambda x: x.position)
