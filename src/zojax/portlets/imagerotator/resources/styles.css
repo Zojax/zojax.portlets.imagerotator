@@ -252,6 +252,15 @@
 .wizard .form-widgets-buttons .x-html-editor-wrap {
   width: 598px!important;
 }
+.z-portlet-preview-content-wrapper #featured > div {
+    /*background-attachment: fixed;*/
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-width: 980px;
+    margin: 0;
+    padding: 0;
+}
 
 
 #sliderContainer, #featured {
@@ -286,6 +295,7 @@
     text-decoration: none;
 }
 .css-text {
+    background: transparent none;
     width: 960px;
     line-height: normal;
     margin: 20px auto;

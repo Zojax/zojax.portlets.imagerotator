@@ -3,12 +3,13 @@
 <tal:slider condition="context/images">
     <div id="featured" class="fiximgs">
         <tal:block repeat="image context/images">
-            <tal:block tal:define="imgid string:${repeat/image/number}">
+            <tal:block tal:define="imgid string:${repeat/image/number};
+                                   filename string:${image/image/filename}">
 
                 <div tal:omit-tag="image/url">
                 <a tal:omit-tag="not: image/url"
                    tal:attributes="href image/url">
-                    <img tal:attributes="src string:${context/url}/images/${repeat/image/number}/++attribute++image;
+                    <img tal:attributes="src string:${context/url}/images/${imgid}/++attribute++image/${filename};
                                          alt image/title" />
                     <div tal:condition="image/text"
                          tal:content="structure image/text/cooked"
