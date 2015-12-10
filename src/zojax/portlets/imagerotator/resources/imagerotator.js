@@ -69,9 +69,9 @@ var rotate = function($active){
     var $current = $(".banners li").eq(triggerID);
     $this.find(".thumbs a").removeClass('active'); //Remove all active class
     $active.addClass('active'); //Add active class (the $active is declared in the rotateSwitch function)
-    
+
     //Slider Animation
-    $this.find('.item-text').animate({opacity:0}, {queue: false, duration: 1000});	
+    $this.find('.item-text').animate({opacity:0}, {queue: false, duration: 1000});
 	$current.siblings().css({'z-index' : '69'});
     $current.siblings().find('.item-image').animate({opacity:0}, {queue: false, duration: 1000});
     $current.find('.item-image').animate({opacity:1}, {queue: false, duration: 1000});
@@ -124,13 +124,13 @@ $this.find(".imagereel a").hover(
 	    function() {
           $(this).find('.buttons-item').hide();
           $(this).find(".buttons-block").css({height:'auto'});
-          $(this).find(".buttons-block").stop().animate({ height: $(this).find(".buttons-block").height() }, 1000);
+          $(this).find(".buttons-block").stop().css({display:'block'}).animate({ height: $(this).find(".buttons-block").height() }, 1000);
 
 	    }, function() {
 	      var $li = $(this);
 	      $(this).find(".buttons-block").stop().slideUp("fast", function(){$li.find('.buttons-item').show()});
 	 });
-	 
+
     $this.find(".buttons ul li .button-item").click(function() {
         $(this).find('.buttons-item').hide();
         $(this).find(".buttons-block").css({height:'auto'});
