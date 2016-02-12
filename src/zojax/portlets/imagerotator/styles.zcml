@@ -10,9 +10,14 @@
      path="portlet-imagerotator/styles.css" filetype="zrt" />
 
   <zojax:resourceinclude
-     name="orbit-1.2.3.css"
+     name="slick.css"
      library="zojax" type="stylesheet"
-     path="portlet-imagerotator/orbit-1.2.3.css" filetype="zrt" />
+     path="portlet-imagerotator/slick.css" filetype="zrt" />
+
+  <zojax:resourceinclude
+     name="slick-theme.css"
+     library="zojax" type="stylesheet"
+     path="portlet-imagerotator/slick-theme.css" filetype="zrt" />
 
   <zojax:resourcedirectory
      name="portlet-imagerotator"

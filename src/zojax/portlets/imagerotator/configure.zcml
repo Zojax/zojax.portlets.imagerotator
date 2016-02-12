@@ -72,11 +72,11 @@
      file="resources/dragdrop.js"/>
 
   <zojax:resourceinclude
-     name="jquery.orbit-1.2.3"
+     name="jquery.slick"
      type="javascript"
-     library="jquery.orbit-1.2.3"
+     library="jquery.slick"
      require="jquery"
-     path="portlet-imagerotator/jquery.orbit-1.2.3.min.js" />
+     path="portlet-imagerotator/slick.min.js" />
 
   <class class=".forms.ImageRotatorImage">
     <allow interface=".interfaces.IImageRotatorImage" />

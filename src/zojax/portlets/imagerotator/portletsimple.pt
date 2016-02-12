@@ -1,7 +1,7 @@
-<div id="sliderContainer">
+<div id="sliderContainer-slick">
 
 <tal:slider condition="context/images">
-    <div id="featured" class="fiximgs">
+    <div id="featured-slick" class="fiximgs">
         <tal:block repeat="image context/images">
             <tal:block tal:define="imgid string:${repeat/image/number};
                                    filename string:${image/image/filename}">
@@ -23,13 +23,21 @@
 
     <script type="text/javascript">
         $(function () {
-            $('#featured').orbit({
-                animation: 'fade',
-                pauseOnHover: true,
-                directionalNav: false,
-                startClockOnMouseOut: true,
-                startClockOnMouseOutAfter: 1,
-                bullets: true
+            $('#featured-slick').slick({
+                adaptiveHeight: true,
+                arrows: false,
+                autoplay: true,
+                cssEase: 'ease',
+                dots: true,
+                draggable: false,
+                easing: 'linear',
+                fade: true,
+                infinite: true,
+                pauseOnDotsHover: true,
+                respondTo: 'slider',
+                //responsive
+                speed: 600,
+                swipe: true
             });
         });
     </script>
